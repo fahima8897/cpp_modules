@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 14:52:35 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/09 18:15:13 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/06/10 11:32:09 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,27 @@
 
 int main(int ac, char **av)
 {
-	(void)av;
-	if (ac < 2)
+	int	i = 1;
+	int	j = 0;
+	char	c;
+	
+	if (ac == 1)
 		std:: cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std:: endl;
+	if (ac > 1)
+	{
+		while (av[i])
+		{
+			j = 0;
+			while(av[i][j])
+			{
+				c = toupper(av[i][j]);
+				std:: cout << c;
+				j++;
+			}
+			std:: cout << ' ';
+			i++;
+		}
+	std:: cout << std:: endl;
+	}
 	return (0);
 }
