@@ -6,12 +6,11 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 14:52:35 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/10 14:42:12 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/06/10 14:53:25 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string>
 
 int main(int ac, char **av)
 {
@@ -21,7 +20,7 @@ int main(int ac, char **av)
 	
 	if (ac == 1)
 		std:: cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std:: endl;
-	if (ac > 1)
+	else
 	{
 		while (av[i])
 		{

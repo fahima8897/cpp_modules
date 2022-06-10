@@ -6,7 +6,18 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 11:56:22 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/10 11:56:23 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/06/10 16:53:59 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
+#include "Contact.hpp"
+
+Contact::Contact()
+{
+	
+}
+
+Contact::~Contact()
+{
+}
