@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 14:52:35 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/10 11:32:09 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/06/10 14:20:09 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ int main(int ac, char **av)
 				std:: cout << c;
 				j++;
 			}
-			std:: cout << ' ';
 			i++;
 		}
 	std:: cout << std:: endl;
