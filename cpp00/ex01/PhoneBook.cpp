@@ -6,27 +6,45 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 11:56:28 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/10 16:53:50 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/06/13 16:41:40 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook()
-{
-	std::cout << "constructeur" << std:: endl;
-	return ;
+PhoneBook::PhoneBook() : _nbContact(0){
 }
 
-PhoneBook::~PhoneBook(void)
+void PhoneBook::create_contact()
 {
-	std::cout << "destructeur" << std:: endl;
-	return ;
+	Contact	contact_added();
+	// std::string	s1;
+	// std::cout << "First name : ";
+	// std::cin >> s1;
+	// std::cout << std::endl;
+	_nbContact++;
+	std::cout << "nb contact : " << _nbContact << std::endl;
+}
+
+PhoneBook::~PhoneBook(){
 }
 
 int main()
 {
-	PhoneBook repertoire;
+	// gerer ctrl + D
+	PhoneBook	repertoire;
+	std::string	commande;
+
+	while (commande != "EXIT")
+	{
+		std::cout << "-> ";
+		std::getline(std::cin, commande);
+		if (commande == "ADD")
+			repertoire.create_contact();
+		else if (commande == "SEARCH")
+			std::cout << "hello my firend i found you" << std::endl;
+		// else
+		// 	std::cout << "This command is not available in this phone book" << std::endl;
+	}
 	return (0);
 }
