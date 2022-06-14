@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 11:56:41 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/13 15:32:01 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/06/14 16:53:42 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PHONE_BOOK_H
 
 #include <iostream>
+#include <cstdlib>
 
 #include "Contact.hpp"
 
@@ -24,10 +25,17 @@ private :
 	int		_nbContact;
 
 public:
+		/* Constructors, Destructors */
 	PhoneBook();
 	~PhoneBook();
-	void	create_contact();
 	
+		/* Methods */
+	void	phonebook_starter();
+	void	create_contact();
+	void	phonebook_display();
+	
+		/* Accessors */
+	int		get_nbContact(void) const;
 };
 
 #endif

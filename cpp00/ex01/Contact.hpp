@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 11:56:37 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/13 16:39:25 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/06/14 16:49:55 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,21 @@ private:
 	
 public:
 
+		/* Constructors, Destructors */
 	Contact();
 	Contact(std::string s1, std::string s2, std::string s3,
 	std::string s4, std::string s5);
 	~Contact();
+	
+		/* Accessors */
 	std::string get_firstName(void) const;
 	std::string get_lastName(void) const;
 	std::string get_nickName(void) const;
 	std::string get_phoneNumber(void) const;
-	std::string get_secret(void) const; 
+	std::string get_secret(void) const;
+	
+		/* Methods */
+	void	set_infosContact();
 };
 
 #endif
