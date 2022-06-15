@@ -6,7 +6,7 @@
 #    By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/10 11:50:15 by fboumell          #+#    #+#              #
-#    Updated: 2022/06/13 15:21:29 by fboumell         ###   ########.fr        #
+#    Updated: 2022/06/15 13:56:52 by fboumell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME = PhoneBook
 
 SRCS = PhoneBook.cpp \
 		Contact.cpp \
+		main.cpp \
 
 OBJS = ${SRCS:.cpp=.o}
 

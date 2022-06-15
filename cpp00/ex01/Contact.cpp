@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 11:56:22 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/14 17:01:43 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/06/15 16:14:00 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,17 +50,44 @@ std::string Contact::get_secret(void) const
     return (this->_secret);
 }
 
-void Contact::set_infosContact()
+std::string Contact::add_infosContact(std::string line)
 {
-    std::cout << "Enter your first Name : ";
-    std::getline(std::cin, this->_firstName);
-    std::cout << "Enter you last Name : ";
-    std::getline(std::cin, this->_lastName);
-    std::cout << "Enter your nickname : ";
-    std::getline(std::cin, this->_nickname);
-    std::cout << "Enter your phone Number : ";
-    std::getline(std::cin, this->_phoneNumber);
-    std::cout << "Enter your darkest secret : ";
-    std::getline(std::cin, this->_secret);   
+    std::string info;
+    
+    std::cout << line;
+    std::getline(std::cin, info);
+    if (info.size() == 0)
+    {
+        while (info.size() == 0)
+        {
+            std::cout << "~ An information must be entered ~" << std::endl;
+            std::cout << line;
+            std::getline(std::cin, info);
+            if (std::cin.fail())
+            {
+                std::cin.clear();
+                std::cin.ignore();
+                std::cout << std::endl;
+                std::exit(EXIT_FAILURE);
+            }
+        }
+    }
+    if (std::cin.fail())
+    {
+        std::cin.clear();
+        std::cin.ignore();
+        std::cout << std::endl;
+        std::exit(EXIT_FAILURE);
+    }
+    return (info);
+}
+Contact Contact::set_infosContact()
+{
+    Contact add_contact(add_infosContact("↪️ Enter first Name : "),
+                        add_infosContact("↪️ Enter last Name : "),
+                        add_infosContact("↪️ Enter nickname : "),
+                        add_infosContact("↪️ Enter phone Number : "),
+                        add_infosContact("↪️ Enter darkest secret : "));
+    return (add_contact);
 }
 

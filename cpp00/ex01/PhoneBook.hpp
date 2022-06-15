@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 11:56:41 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/14 16:53:42 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/06/15 17:15:13 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 
 #include <iostream>
 #include <cstdlib>
-
+#include <iomanip>
 #include "Contact.hpp"
+#include <cctype>
 
 class PhoneBook
 {
@@ -32,6 +33,8 @@ public:
 		/* Methods */
 	void	phonebook_starter();
 	void	create_contact();
+	std::string reduce_string(std::string info);
+	bool	manage_index(std::string index);
 	void	phonebook_display();
 	
 		/* Accessors */

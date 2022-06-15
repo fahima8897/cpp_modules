@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 11:56:37 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/14 16:49:55 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/06/15 16:03:53 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CONTACT_H
 
 #include <iostream>
+#include <cstdlib>
 #include <string>
 
 class Contact
@@ -41,7 +42,8 @@ public:
 	std::string get_secret(void) const;
 	
 		/* Methods */
-	void	set_infosContact();
+	std::string add_infosContact(std::string info);
+	Contact	set_infosContact();
 };
 
 #endif
