@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 11:56:37 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/15 16:03:53 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/06/16 14:26:07 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ public:
 	
 		/* Methods */
 	std::string add_infosContact(std::string info);
-	Contact	set_infosContact();
+	Contact		set_infosContact();
+	void		display_contactChosen();
 };
 
 #endif

@@ -6,16 +6,11 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 13:22:39 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/15 16:35:59 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/06/16 15:03:25 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-
-// encore a gerer :
-// - 8 contacts max, si 9 le plus ancien est remplace par le nouveau
-// - afficher contact quand index choisit. Gerer quand si index ou format incorrect
-// - afficher infos contact apres choix d'index (une info par ligne)
 
 int main()
 {

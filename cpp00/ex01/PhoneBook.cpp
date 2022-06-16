@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 11:56:28 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/15 17:26:21 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/06/16 15:00:17 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,10 @@ void PhoneBook::phonebook_starter()
 
 void PhoneBook::create_contact()
 {
+	size_t	index;
 	
-	this->_listContact[this->_nbContact] = _listContact[this->_nbContact].set_infosContact();
+	index = this->_nbContact % 8;
+	this->_listContact[index] = _listContact[index].set_infosContact();
 	this->_nbContact++;
 }
 
@@ -47,23 +49,25 @@ std::string PhoneBook::reduce_string(std::string info)
 
 bool	PhoneBook::manage_index(std::string index)
 {
-	int j;
+	int i;
+	size_t		long_nbContact;
 
-	j = 0;
-	while (index[j])
+	i = 0;
+	long_nbContact = this->_nbContact;
+	while (index[i])
 	{
-		if (!isdigit(index[j]))
+		if (!isdigit(index[i]))
 		{
 			std::cout << "~ Format of index incorrect, try again ~" << std::endl;
 			return (true);
 		}
-		j++;
+		i++;
 	}
-	// if (std::strtoul(index) != this->_nbContact)
-	// {
-	// 	std::cout << "~ The index entered does not exist, try again ~" << std::endl;
-	// 	return (true);
-	// }
+	if ((std::strtoul(index.c_str(), NULL, 10) > long_nbContact) || (std::strtoul(index.c_str(), NULL, 10) == 0))
+	{
+		std::cout << "~ The index entered does not exist, try again ~" << std::endl;
+		return (true);
+	}
 	return (false);
 		
 }
@@ -82,23 +86,31 @@ void PhoneBook::phonebook_display()
 		std::cout << std::setw(10) << i + 1 << "|";
 		std::cout << std::setw(10) << reduce_string(this->_listContact[i].get_firstName()) << "|";
 		std::cout << std::setw(10) << reduce_string(this->_listContact[i].get_lastName()) << "|";
-		std::cout << std::setw(10) << reduce_string(this->_listContact[i].get_nickName()) << "|";
+		std::cout << std::setw(10) << reduce_string(this->_listContact[i].get_nickName());
 		std::cout << std::endl;
 	}
 	std::cout << " " << std::endl;
-	
-	std::cout << "~ Which contact form do you want to consult? ~ " << std::endl;
-	while(boolean)
+
+	if (this->_nbContact != 0)
 	{
-		std::cout << "~ Enter an index to see the form: ";
-		std::getline(std::cin, index);
-		if (std::cin.fail())
+		std::cout << "~ Which contact form do you want to consult? ~ " << std::endl;
+		while (boolean)
 		{
-			std::cin.clear();
-			std::cin.ignore();
-			std::cout << std::endl;
-			std::exit(EXIT_FAILURE);
+			std::cout << "~ Enter an index to see the form: ";
+			std::getline(std::cin, index);
+			if (std::cin.fail())
+			{
+				std::cin.clear();
+				std::cin.ignore();
+				std::cout << std::endl;
+				std::exit(EXIT_FAILURE);
+			}
+			boolean = manage_index(index);
 		}
-		boolean = manage_index(index);
+	}
+	if (boolean == false)
+	{
+		size_t j = std::strtoul(index.c_str(), NULL, 10);
+		this->_listContact[j - 1].display_contactChosen();
 	}
 }

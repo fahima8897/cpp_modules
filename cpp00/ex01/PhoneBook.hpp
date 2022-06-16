@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 11:56:41 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/15 17:15:13 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/06/16 14:25:44 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ public:
 	bool	manage_index(std::string index);
 	void	phonebook_display();
 	
+
 		/* Accessors */
 	int		get_nbContact(void) const;
 };

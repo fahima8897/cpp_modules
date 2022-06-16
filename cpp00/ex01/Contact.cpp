@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 11:56:22 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/15 16:14:00 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/06/16 14:54:20 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,3 +91,10 @@ Contact Contact::set_infosContact()
     return (add_contact);
 }
 
+void Contact::display_contactChosen()
+{
+    std::cout << "~ Below the informations you asked for 🗒 ~" << std::endl;
+    std::cout << "▪️ First name : " << this->get_firstName() << std::endl;
+    std::cout << "▪️ Last name : " << this->get_lastName() << std::endl;
+    std::cout << "▪️ Nickname : " << this->get_nickName() << std::endl;
+}
