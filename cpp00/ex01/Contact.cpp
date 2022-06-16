@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 11:56:22 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/16 14:54:20 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/06/16 15:16:42 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ std::string Contact::add_infosContact(std::string line)
     }
     return (info);
 }
+
 Contact Contact::set_infosContact()
 {
     Contact add_contact(add_infosContact("↪️ Enter first Name : "),
@@ -97,4 +98,6 @@ void Contact::display_contactChosen()
     std::cout << "▪️ First name : " << this->get_firstName() << std::endl;
     std::cout << "▪️ Last name : " << this->get_lastName() << std::endl;
     std::cout << "▪️ Nickname : " << this->get_nickName() << std::endl;
+    std::cout << "▪️ Phone number : " << this->get_phoneNumber() << std::endl;
+    std::cout << "▪️ Darkest secret : " << this->get_secret() << std::endl;
 }

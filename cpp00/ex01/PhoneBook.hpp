@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 11:56:41 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/16 14:25:44 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/06/16 15:22:40 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ public:
 	~PhoneBook();
 	
 		/* Methods */
-	void	phonebook_starter();
-	void	create_contact();
+	void		phonebook_starter();
+	void		create_contact();
 	std::string reduce_string(std::string info);
-	bool	manage_index(std::string index);
-	void	phonebook_display();
+	bool		manage_index(std::string index);
+	void		phonebook_display();
 	
 
 		/* Accessors */

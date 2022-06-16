@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 11:56:28 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/16 15:00:17 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/06/16 15:42:27 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ std::string PhoneBook::reduce_string(std::string info)
 bool	PhoneBook::manage_index(std::string index)
 {
 	int i;
-	size_t		long_nbContact;
+	size_t long_nbContact;
 
 	i = 0;
 	long_nbContact = this->_nbContact;
@@ -63,8 +63,9 @@ bool	PhoneBook::manage_index(std::string index)
 		}
 		i++;
 	}
-	if ((std::strtoul(index.c_str(), NULL, 10) > long_nbContact) || (std::strtoul(index.c_str(), NULL, 10) == 0))
+	if (std::strtoul(index.c_str(), NULL, 10) > long_nbContact || std::strtoul(index.c_str(), NULL, 10) > 8 || (std::strtoul(index.c_str(), NULL, 10) <= 0))
 	{
+		
 		std::cout << "~ The index entered does not exist, try again ~" << std::endl;
 		return (true);
 	}
@@ -90,7 +91,6 @@ void PhoneBook::phonebook_display()
 		std::cout << std::endl;
 	}
 	std::cout << " " << std::endl;
-
 	if (this->_nbContact != 0)
 	{
 		std::cout << "~ Which contact form do you want to consult? ~ " << std::endl;
