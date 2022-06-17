@@ -5,15 +5,17 @@
 #                                                     +:+ +:+         +:+      #
 #    By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/06/16 17:11:10 by fboumell          #+#    #+#              #
-#    Updated: 2022/06/16 17:56:05 by fboumell         ###   ########.fr        #
+#    Created: 2022/06/17 15:46:44 by fboumell          #+#    #+#              #
+#    Updated: 2022/06/17 15:47:47 by fboumell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Account
+NAME = Zombie
 
-SRCS = test.cpp \
-		Account.cpp \
+SRCS = main.cpp \
+		Zombie.cpp \
+		newZombie.cpp \
+		randomChump.cpp \
 
 OBJS = ${SRCS:.cpp=.o}
 
