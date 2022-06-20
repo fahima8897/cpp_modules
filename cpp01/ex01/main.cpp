@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 15:48:53 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/20 14:27:18 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/06/20 14:35:59 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int main()
 {
     Zombie *newZ;
 
-    newZ = zombieHorde(6, "The Z");
-    for(int i = 0; i < 6; i++)
+    newZ = zombieHorde(4, "The Z");
+    for(int i = 0; i < 4; i++)
         newZ[i].announce();
     delete[] newZ;
     return (0);

@@ -5,16 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/06/17 15:46:44 by fboumell          #+#    #+#              #
-#    Updated: 2022/06/20 14:43:12 by fboumell         ###   ########.fr        #
+#    Created: 2022/06/20 14:40:23 by fboumell          #+#    #+#              #
+#    Updated: 2022/06/20 14:42:17 by fboumell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ZombieHorde
+NAME = Brain
 
 SRCS = main.cpp \
-		Zombie.cpp \
-		zombieHorde.cpp \
 
 OBJS = ${SRCS:.cpp=.o}
 
