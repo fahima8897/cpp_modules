@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 15:51:36 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/17 17:21:31 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/06/20 14:30:35 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,9 @@ Zombie::~Zombie()
 void	Zombie::announce(void)
 {
 	std::cout << this->_name << " : BraiiiiiiinnnzzzZ..." << std::endl;
+}
+
+void Zombie::setName(std::string name)
+{
+	this->_name = name;
 }

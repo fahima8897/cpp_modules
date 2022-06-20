@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 15:48:53 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/17 17:22:16 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/06/20 11:48:26 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Zombie* newZombie(std::string name);
 
 int main()
 {
-    Zombie* new_one;
+    Zombie *new_one;
     
     new_one = newZombie("The Walking Dead");
     new_one->announce();

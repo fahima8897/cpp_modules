@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 15:49:18 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/17 16:50:47 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/06/20 14:30:49 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,13 @@ private:
 public:
 
 	/*  constructeurs & destructeurs    */
-	Zombie();
-	Zombie(std:: string zombieName);
-	~Zombie();
+			Zombie();
+			Zombie(std:: string zombieName);
+			~Zombie();
 
 	/*  Methods */
 void        announce(void);
+void 		setName(std::string name);
 
 };
 
