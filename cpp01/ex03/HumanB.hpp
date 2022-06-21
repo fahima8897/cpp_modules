@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 17:32:43 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/20 17:43:26 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/06/21 13:54:22 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ public:
         ~HumanB();
     
     /*  setter  */
-        void    setWeapon(Weapon arme);
+        void    setWeapon(Weapon &arme);
         
     /*  Methodes    */
         void    attack();

@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 16:04:34 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/20 17:17:48 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/06/21 14:11:15 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ public:
 		~Weapon();
 	
 	/*	getter & setter	*/
-		std::string getType(void) const;
+		const std::string &getType(void);
 		void		setType(std::string new_one);
 };
 
