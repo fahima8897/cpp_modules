@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 14:28:18 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/21 17:37:01 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/06/22 13:51:34 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,30 +24,25 @@ int	main(int ac, char **av)
 	}
 	else
 	{
-		std::ifstream file1;
-		std::string str_replace;
-		std::ofstream replace;
+		std::ifstream	file1;
+		std::string		str_replace;
+		std::ofstream	replace;
+		std::string		line;
 		
 		file1.open(av[1]);
 		if (file1.is_open())
 		{
-			// std::string line;
-			// std::ifstream infile(av[1]);
-			// if (infile.good() == false)
-			// 	std::cout << "File can not be open" << std::endl;
-			// while (true)
-			// {
-			// 	getline(infile, line);
-			// 	std::cout << line << std::endl;
-			// 	if (infile.eof())
-			// 		break ;
-			// }
 			str_replace = av[1] + std::string(".replace");
 			replace.open(str_replace.c_str(), std::ofstream::out);
 			if (replace.is_open())
 			{
-				replace << line;
-
+				file1 >> line;
+				// std::cout << "line = " << line << std::endl;
+				while (!file1.eof())
+				{
+					replace << line << std::endl;
+					file1 >> line;
+				}
 			}
 			else
 				std::cout << "File.replace can not be open" << std::endl;
