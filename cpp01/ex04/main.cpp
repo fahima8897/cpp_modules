@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 14:28:18 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/24 14:32:16 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/06/24 15:09:39 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,15 @@ std::string	check_emptyFile(std::ifstream &file, char *str)
 	return (line);
 }
 
-void	check_emptyString(std::string const s1, std::string const s2)
+int	check_emptyString(std::string const s1, std::string const s2)
 {
 	if (s1.length() == 0 || s2.length() == 0)
+	{
 		std::cout << "One of the string is empty. Try again" << std::endl;
+		return (1);
+	}
+	return (0);
+		
 }
 
 int	main(int ac, char **av)
@@ -54,7 +59,8 @@ int	main(int ac, char **av)
 		file1.open(av[1]);
 		if (file1.is_open())
 		{
-			check_emptyString(str2, str3);
+			if (check_emptyString(str2, str3))
+				return (-1);
 			line = check_emptyFile(file1, av[1]);
 			str_replace = av[1] + std::string(".replace");
 			replace.open(str_replace.c_str(), std::ofstream::out);
@@ -62,15 +68,14 @@ int	main(int ac, char **av)
 			{
 				while (!file1.eof())
 				{
-					pos = line.find(av[2]);
-					if (pos != std::string::npos)
+					while (line.find(str2) != std::string::npos)
 					{
+						pos = line.find(str2);
 						line.erase(pos, str2.length());
-						line.insert(pos, av[3]);
-						replace << line << "\n";
+						line.insert(pos, str3);
+					//	pos += str3.length();
 					}
-					else
-						replace << line << "\n";
+					replace << line << "\n";
 					std::getline(file1, line);
 				}
 			}
