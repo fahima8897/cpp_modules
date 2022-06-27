@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 16:56:31 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/24 17:39:14 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/06/27 14:26:22 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,5 @@ int main(int ac, char **av)
         return (1);
     }
     level.complain(av[1]);
-    // if (av[1] != std::string("WARNING") && av[1] != std::string("INFO") && \
-    //      av[1] != std::string("DEBUG") && av[1] != std::string("ERROR"))
-    // {
-    //     std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-    //     return (1);
-    // }
     return (0);
 }
