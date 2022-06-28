@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/17 15:48:53 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/27 14:54:18 by fboumell         ###   ########.fr       */
+/*   Created: 2022/06/28 11:39:51 by fboumell          #+#    #+#             */
+/*   Updated: 2022/06/28 13:50:46 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef FIXED_H
+# define FIXED_H
 
-Zombie* zombieHorde(int n, std::string name);
+#include <iomanip>
+#include <iostream>
 
-int main()
+class Fixed
 {
-    Zombie *newZ;
+private:
 
-    newZ = zombieHorde(7, "The Z");
-    for(int i = 0; i < 7; i++)
-        newZ[i].announce();
-    delete[] newZ;
-    return (0);
-}
+	int _entier;
+	static const int	_entierConst;
+	
+public:
+
+	/*  constructeurs & destructeurs    */
+		Fixed();
+		Fixed()
+		~Fixed();
+};
+
+#endif
