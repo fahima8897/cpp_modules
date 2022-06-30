@@ -6,11 +6,11 @@
 #    By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/30 16:22:18 by fboumell          #+#    #+#              #
-#    Updated: 2022/06/30 16:22:39 by fboumell         ###   ########.fr        #
+#    Updated: 2022/06/30 17:09:22 by fboumell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = action
+NAME = clapTrap
 
 SRCS = main.cpp \
 		ClapTrap.cpp \

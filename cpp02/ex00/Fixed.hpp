@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 11:39:51 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/30 14:53:39 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/06/30 17:12:07 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ public:
 	/*	operateur d'affectation	*/
 		Fixed	&operator = (const Fixed &nb);	
 	
-	/*	Methods	*/
+	/*	Accessors	*/
 		int 	getRawBits(void) const;
 		void	setRawBits(int const raw);
 };
