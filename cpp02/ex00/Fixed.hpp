@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 11:39:51 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/28 13:50:46 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/06/30 14:53:39 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,23 @@ class Fixed
 private:
 
 	int _entier;
-	static const int	_entierConst;
+	static const int	_entierConst = 8;
 	
 public:
 
-	/*  constructeurs & destructeurs    */
+	/*  constructeur & destructeur   */
 		Fixed();
-		Fixed()
 		~Fixed();
+	
+	/*	constructeur de recopie	*/
+		Fixed(const Fixed &nb_entier);
+		
+	/*	operateur d'affectation	*/
+		Fixed	&operator = (const Fixed &nb);	
+	
+	/*	Methods	*/
+		int 	getRawBits(void) const;
+		void	setRawBits(int const raw);
 };
 
 #endif
