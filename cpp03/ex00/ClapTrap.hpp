@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 16:23:08 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/30 17:32:04 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/07/01 16:59:07 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ class ClapTrap
 {
 private:
 
-    std::string _name;
-    int         _hit;
-    int         _energyPoint;
-    int         _attack;
+    std::string         _name;
+    unsigned int        _hit;
+    unsigned int        _energyPoint;
+    unsigned int        _attack;
 
 public:
 
@@ -38,15 +38,10 @@ public:
     /*  operateur d'affectation */
         ClapTrap &operator=(const ClapTrap &clapOp);
 
-    /*  Accessors   */
-        int    getHit(void) const;
-        int    getEnergyPoint(void) const;
-        int    getAttack(void) const;
-
     /*  Methods */
         void    attack(const std::string &target);
         void    takeDamage(unsigned int amount);
-        void    beReparaired(unsigned int amount);
+        void    beRepaired(unsigned int amount);
     
 };
 

@@ -6,23 +6,26 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 16:24:00 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/30 17:37:49 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/07/01 17:10:32 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap()
-{
-    _hit = 10;
-    _energyPoint = 10;
-    _attack = 0;
-    std::cout << "Default constructor called" << std::endl;
-}
+// ClapTrap::ClapTrap()
+// {
+//     std::cout << "Default constructor called" << std::endl;
+//     _hit = 10;
+//     _energyPoint = 10;
+//     _attack = 0;
+// }
 
 ClapTrap::ClapTrap(std::string str) : _name(str)
 {
     std::cout << "Constructor called" << std::endl;
+     _hit = 10;
+    _energyPoint = 10;
+    _attack = 0;
 }
 
 ClapTrap::~ClapTrap()
@@ -32,11 +35,13 @@ ClapTrap::~ClapTrap()
 
 ClapTrap::ClapTrap(const ClapTrap &clapRecopie)
 {
+    std::cout << "Copy constructor called" << std::endl;
     *this = clapRecopie;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &clapOp)
 {
+    std::cout << "Copy assignment operator called" << std::endl;
     _name = clapOp._name;
     _hit = clapOp._hit;
     _energyPoint = clapOp._energyPoint;
@@ -44,52 +49,46 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &clapOp)
     return *this;
 }
 
-int ClapTrap::getHit(void) const
-{
-    return (this->_hit);
-}
-
-int ClapTrap::getEnergyPoint(void) const
-{
-    return (this->_energyPoint);
-}
-
-int ClapTrap::getAttack(void) const
-{
-    return (this->_attack);
-}
-
 void ClapTrap::attack(const std::string &target)
 {
-    // if (_hit <= 0 || _energyPoint <= 0)
-    // {
-    //     std::cout << this->_name << " has no more Hit point or Energy point";
-    //     std::cout<< std::endl;
-    // }
-    // else
-    // {
-        std::cout << "ClapTrap " << this->_name;
-        std::cout << " attacks " << target;
-        // std::cout << " causing ";
-        std::cout << " points of damage!" << std::endl;
-        this->_energyPoint--;
-    // }
+    if (this->_hit <= 0 || this->_energyPoint <= 0)
+    {
+        std::cout << this->_name << " has no more Hit point or Energy point";
+        std::cout<< std::endl;
+    }
+    std::cout << "ClapTrap " << this->_name;
+    std::cout << " attacks " << target;
+    std::cout << " causing " << this->_attack;
+    std::cout << " points of damage!" << std::endl;
+   this->_energyPoint--;
 }
 
-void ClapTrap::beReparaired(unsigned int amount)
+void    ClapTrap::takeDamage(unsigned int amount)
 {
-    // if (_hit <= 0 || _energyPoint <= 0)
-    // {
-    //     std::cout << this->_name << " has no more Hit point or Energy point";
-    //     std::cout<< std::endl;
-    // }
-    // else
-    // {
+    std::cout << "ClapTrap " << this->_name;
+    std::cout << " has caused damaged to his opponent.";
+    std::cout << " The opponent has lost ";
+    std::cout << amount << " of Hit points" << std::endl;
+    this->_hit = this->_hit - amount;
+}
+
+void ClapTrap::beRepaired(unsigned int amount)
+{
+    if (this->_hit <= 0 || this->_energyPoint <= 0)
+    {
         std::cout << "ClapTrap " << this->_name;
-        std::cout << " is repaired. ";
-        std::cout << amount << " points of " << this->_hit;
-        std::cout << " has been gaigned" << std::endl;
-        this->_energyPoint--;
-        this->_hit++;
-    // }
+        std::cout << " has no more Hit points or Energy points";
+        std::cout<< std::endl;
+    }
+    std::cout << "ClapTrap " << this->_name;
+    std::cout << " is repaired. ";
+    std::cout << amount << " points of Hit points";
+    std::cout << " have been gaigned" << std::endl;
+    this->_energyPoint--;
+    std::cout << "energy " << this->_energyPoint << std::endl;
+    if (this->_hit < 0)
+        this->_hit = 0;
+    else
+        this->_hit = this->_hit + amount;
+    std::cout << "hit " << this->_hit << std::endl;
 }
