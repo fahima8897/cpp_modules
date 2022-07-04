@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 16:23:08 by fboumell          #+#    #+#             */
-/*   Updated: 2022/07/01 16:59:07 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/07/04 15:29:36 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ class ClapTrap
 private:
 
     std::string         _name;
-    unsigned int        _hit;
-    unsigned int        _energyPoint;
-    unsigned int        _attack;
+    int                 _hit;
+    int                 _energyPoint;
+    int                 _attack;
 
 public:
 
