@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 11:40:48 by fboumell          #+#    #+#             */
-/*   Updated: 2022/06/30 15:56:45 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/07/05 12:06:43 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ float	Fixed::toFloat() const
 {
 	return ((float) this->_entier / (float)(1 << this->_entierConst));
 }
+
 
 std::ostream	&operator<<(std::ostream &flux, Fixed const &nb)
 {
