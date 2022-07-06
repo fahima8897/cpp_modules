@@ -6,11 +6,11 @@
 #    By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/30 16:22:18 by fboumell          #+#    #+#              #
-#    Updated: 2022/07/05 17:22:17 by fboumell         ###   ########.fr        #
+#    Updated: 2022/07/06 15:22:22 by fboumell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = clapTrap
+NAME = scavTrap
 
 SRCS = main.cpp \
 		ClapTrap.cpp \

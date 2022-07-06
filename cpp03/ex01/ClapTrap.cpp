@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 16:24:00 by fboumell          #+#    #+#             */
-/*   Updated: 2022/07/05 16:57:10 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/07/06 15:53:08 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 ClapTrap::ClapTrap()
 {
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << "Default constructor ClapTrap called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string str) : _name(str)
 {
-    std::cout << "Constructor called" << std::endl;
+    std::cout << "Constructor ClapTrap called" << std::endl;
      _hit = 10;
     _energyPoint = 10;
     _attack = 0;
@@ -27,18 +27,18 @@ ClapTrap::ClapTrap(std::string str) : _name(str)
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "Destructor called" <<std::endl;
+    std::cout << "Destructor Claptrap called" <<std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &clapRecopie)
 {
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "Copy constructor ClapTrap called" << std::endl;
     *this = clapRecopie;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &clapOp)
 {
-    std::cout << "Copy assignment operator called" << std::endl;
+    std::cout << "Copy assignment operator ClapTrap called" << std::endl;
     this->_name = clapOp._name;
     this->_hit = clapOp._hit;
     this->_energyPoint = clapOp._energyPoint;
@@ -80,7 +80,7 @@ void    ClapTrap::takeDamage(unsigned int amount)
         std::cout << " lost " << amount ;
         std::cout << " of Hit points after attacking" << std::endl;
         this->_hit = this->_hit - amount;
-        std::cout << "Hits after damage : " << this->_hit << std::endl;
+        std::cout << "Hit after damage : " << this->_hit << std::endl;
     }
 }
 

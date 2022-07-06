@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 17:23:19 by fboumell          #+#    #+#             */
-/*   Updated: 2022/07/05 17:45:42 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/07/06 16:51:27 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,20 @@ private:
     /* data */
 public:
 
-    // /*  Construceurs & Destructeurs */
-    //     ScavTrap();
-    //     ~ScavTrap();
+    /*  Construceurs & Destructeurs */
+        ScavTrap();
+        ScavTrap(std::string name);
+        ~ScavTrap();
+
+    /*  constructeur de recopie */
+        ScavTrap(const ScavTrap &src);
+
+    /*  operateur d'affectation */
+        ScavTrap &operator=(const ScavTrap &rhs);
 
     /*  Methodes    */
         void guardGate();
+        void attack(const std::string &target);
     
 };
 

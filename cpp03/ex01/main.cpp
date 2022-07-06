@@ -6,41 +6,54 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 16:22:44 by fboumell          #+#    #+#             */
-/*   Updated: 2022/07/05 17:24:53 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/07/06 17:00:35 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
 int main()
 {
-    ClapTrap Clap("Thor");
-    ClapTrap Clap2(Clap);
+    ClapTrap Clap("Jacquemus");
+    ClapTrap Clap1(Clap);
+    ScavTrap Scav("Apple");
+    ScavTrap Scav1(Scav);
+    
+    std::cout << std::endl;
+
+    Clap.attack("Dior");
+    Clap.takeDamage(50);
+    Clap.beRepaired(100);
 
     std::cout << std::endl;
 
-    Clap.attack("Thanos");
-    Clap.takeDamage(6);
-    Clap.beRepaired(2);
-    
-    std::cout << std::endl;
-    
-    Clap2.attack("Iron Man");
-    Clap2.takeDamage(2);
-    Clap2.beRepaired(100);
+    Clap1.attack("Chanel");
+    Clap1.takeDamage(50);
+    Clap1.beRepaired(100);
 
     std::cout << std::endl;
-    
-    Clap.attack("Gojo");
-    Clap.takeDamage(6);
-    Clap.beRepaired(2);
+
+    Scav.attack("Samsung");
+    Scav.takeDamage(2);
+    Scav.beRepaired(20);
 
     std::cout << std::endl;
-    
-    Clap2.attack("sukuna");
-    Clap2.takeDamage(60);
-    Clap2.beRepaired(50);
+
+    Clap.attack("Dior");
+    Clap.takeDamage(5);
+    Clap.beRepaired(10);
+
+    std::cout << std::endl;
+
+    Scav.attack("Samsung");
+    Scav.takeDamage(3);
+    Scav.beRepaired(23);
+
+    std::cout << std::endl;
+
+    Scav1.attack("Nokia");
+    Scav1.takeDamage(2);
+    Scav1.beRepaired(20);
 
     std::cout << std::endl;
 
