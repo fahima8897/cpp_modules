@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 16:22:44 by fboumell          #+#    #+#             */
-/*   Updated: 2022/07/08 13:39:36 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/07/08 14:27:00 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int main()
     // ClapTrap Clap1(Clap);
     ScavTrap Scav("Apple");
     ScavTrap Scav1(Scav);
+    // ScavTrap Scav2("Life");
     
     std::cout << std::endl;
 
@@ -57,6 +58,13 @@ int main()
     Scav.takeDamage(2);
     Scav.beRepaired(20);
     Scav.guardGate();
+
+    // std::cout << std::endl;
+
+    // Scav2.attack("Death");
+    // Scav2.takeDamage(2);
+    // Scav2.beRepaired(20);
+    // Scav2.guardGate();
 
     std::cout << std::endl;
 
