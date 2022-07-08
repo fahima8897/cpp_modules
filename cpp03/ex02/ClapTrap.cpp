@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 16:24:00 by fboumell          #+#    #+#             */
-/*   Updated: 2022/07/08 12:10:31 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/07/08 13:18:23 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,6 @@ void ClapTrap::beRepaired(unsigned int amount)
         this->_energyPoint--;
         this->_hit = this->_hit + amount;
         std::cout << "energy after repaired : " << this->_energyPoint << std::endl;
-        std::cout << "Hits after repaired : " << this->_hit << std::endl;
+        std::cout << "Hit after repaired : " << this->_hit << std::endl;
     }
 }
