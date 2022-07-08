@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 16:22:44 by fboumell          #+#    #+#             */
-/*   Updated: 2022/07/06 17:00:35 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/07/08 12:12:46 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,6 @@ int main()
 
     std::cout << std::endl;
 
-    Scav.attack("Samsung");
-    Scav.takeDamage(2);
-    Scav.beRepaired(20);
-
-    std::cout << std::endl;
-
     Clap.attack("Dior");
     Clap.takeDamage(5);
     Clap.beRepaired(10);
@@ -46,14 +40,23 @@ int main()
     std::cout << std::endl;
 
     Scav.attack("Samsung");
+    Scav.takeDamage(2);
+    Scav.beRepaired(20);
+    Scav.guardGate();
+    
+    std::cout << std::endl;
+
+    Scav.attack("Nokia");
     Scav.takeDamage(3);
     Scav.beRepaired(23);
+    Scav1.guardGate();
 
     std::cout << std::endl;
 
-    Scav1.attack("Nokia");
+    Scav1.attack("Samsung");
     Scav1.takeDamage(2);
     Scav1.beRepaired(20);
+    Scav1.guardGate();
 
     std::cout << std::endl;
 
