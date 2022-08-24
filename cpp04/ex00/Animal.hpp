@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 16:52:20 by fboumell          #+#    #+#             */
-/*   Updated: 2022/08/24 15:09:59 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/08/24 15:41:24 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,10 @@ public:
 
     /*  operateur d'affectation */
         Animal &operator=(const Animal &rhs);
-
     
-        
+    /*  getter  */
+        std::string getType();
+
     /*  Methodes    */
         void    makeSound();
         
