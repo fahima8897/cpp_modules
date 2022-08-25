@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 16:52:07 by fboumell          #+#    #+#             */
-/*   Updated: 2022/08/24 15:42:04 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/08/25 14:36:37 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 Animal::Animal()
 {
     std::cout << "Default constructor Animal called" << std::endl;
+}
+
+Animal::Animal(std::string str)
+{
+    _type = str;
+    std::cout << "constructor Animal called" << std::endl;
 }
 
 Animal::~Animal()
@@ -35,12 +41,12 @@ Animal &Animal::operator=(const Animal &rhs)
     return(*this);
 }
 
-std::string Animal::getType()
+std::string Animal::getType() const
 {
     return (this->_type);
 }
 
-Animal makeSound()
+void Animal::makeSound() const
 {
-    std::cout << ""
+    std::cout << "I am an ANIMALLLLL!!" << std::endl;
 }

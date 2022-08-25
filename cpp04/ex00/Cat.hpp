@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 16:58:04 by fboumell          #+#    #+#             */
-/*   Updated: 2022/07/08 17:04:48 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/08/25 14:15:07 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,15 @@ public:
     /*  constructeur & destructeur  */
         Cat();
         ~Cat();
+
+    /*  constructeur de recopie */
+        Cat(const Cat &src);
+
+    /*  operateur d'affectation */
+        Cat &operator=(const Cat &rhs);
+
+    /*  Methodes    */
+        void makeSound() const;
 };
 
 #endif

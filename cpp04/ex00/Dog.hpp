@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 17:01:02 by fboumell          #+#    #+#             */
-/*   Updated: 2022/08/24 15:47:39 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/08/25 14:30:19 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ public:
     /*  operateur d'affectation */
         Dog &operator=(const Dog &rhs);
 
+    /*  Methodes    */
+    void    makeSound() const;
 
 };
 

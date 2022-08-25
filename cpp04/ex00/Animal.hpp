@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 16:52:20 by fboumell          #+#    #+#             */
-/*   Updated: 2022/08/24 15:41:24 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/08/25 14:34:55 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ public:
 
     /* constructeurs & destructeur  */
         Animal();
+        Animal(std::string str);
         ~Animal();
 
     /*  constructeur de recopie */
@@ -35,10 +36,10 @@ public:
         Animal &operator=(const Animal &rhs);
     
     /*  getter  */
-        std::string getType();
+        std::string getType() const;
 
     /*  Methodes    */
-        void    makeSound();
+        virtual void    makeSound() const;
         
 };
 
