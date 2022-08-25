@@ -1,46 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/08 16:52:20 by fboumell          #+#    #+#             */
-/*   Updated: 2022/08/25 16:24:22 by fboumell         ###   ########.fr       */
+/*   Created: 2022/08/25 16:06:29 by fboumell          #+#    #+#             */
+/*   Updated: 2022/08/25 16:08:20 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef WRONG_CAT_HPP
+# define WRONG_CAT_HPP
 
-#include <iomanip>
-#include <iostream>
+#include "WrongAnimal.hpp"
 
-class Animal
+class WrongCat : public WrongAnimal
 {
-protected:
-    
-    std::string _type;
-    
+private:
+    /* data */
 public:
 
-    /* constructeurs & destructeur  */
-        Animal();
-        Animal(std::string str);
-        virtual ~Animal();
+    /*  constructeur & destructeur  */
+        WrongCat();
+        ~WrongCat();
 
     /*  constructeur de recopie */
-        Animal(const Animal &src);
+        WrongCat(const WrongCat &src);
 
     /*  operateur d'affectation */
-        Animal &operator=(const Animal &rhs);
-    
-    /*  getter  */
-        std::string getType() const;
+        WrongCat &operator=(const WrongCat &rhs);
 
     /*  Methodes    */
-        virtual void    makeSound() const;
-        
+        void makeSound() const;
 };
 
 #endif
