@@ -1,37 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/25 16:40:18 by fboumell          #+#    #+#             */
-/*   Updated: 2022/08/30 13:18:24 by fboumell         ###   ########.fr       */
+/*   Created: 2022/08/30 12:47:43 by fboumell          #+#    #+#             */
+/*   Updated: 2022/08/30 13:14:25 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#ifndef BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
 
 #include <iomanip>
-#include <iostream>
+#include<iostream>
 
-class Brain
+class Bureaucrat
 {
-        
-    public:
-        
-        std::string ideas[100];
+private:
+    
+    int _grade;
+    const std::string   _name;
+    
+public:
 
     /*  constructeurs & destructeurs    */
-        Brain();
-        ~Brain();
+        Bureaucrat();
+        ~Bureaucrat();
 
-    /*  constructeur de recopie */
-        Brain(const Brain &src);
-
-    /*  operateur d'affectation */
-        Brain &operator=(const Brain &rhs);
+    /*  getters */
+        std::string    getName();
+        int   getGrade();
+    
+    /*  Methodes    */
+        Bureaucrat operator++(int);
+        Bureaucrat operator--(int);
 };
+
+
+
 
 #endif

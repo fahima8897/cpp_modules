@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 16:40:14 by fboumell          #+#    #+#             */
-/*   Updated: 2022/08/26 13:24:31 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/08/30 13:18:31 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ Brain &Brain::operator=(const Brain &rhs)
     int i;
     
     for (i = 0; i < 100; i++)
-        this->_ideas[i] = rhs._ideas[i];
+        this->ideas[i] = rhs.ideas[i];
     return (*this);
 }
