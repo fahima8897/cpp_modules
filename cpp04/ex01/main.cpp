@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 17:00:19 by fboumell          #+#    #+#             */
-/*   Updated: 2022/08/29 14:50:06 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/01 14:07:05 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,13 @@
 #include "WrongCat.hpp"
 #include "Brain.hpp"
 
+#define PET_NUM 2
+
 int main()
 {
-    // const Animal* j = new Dog();
-    // const Animal* i = new Cat();
 
-    // j->makeSound();
-    // i->makeSound();
-    
-    // delete j;//should not create a leak
-    // delete i;
-
-    const Animal *pets[9];
-    for (int i = 0; i < 9; i++)
+    const Animal *pets[PET_NUM];
+    for (int i = 0; i < PET_NUM; i++)
     {
         if (i % 2 == 0)
         {
@@ -40,7 +34,7 @@ int main()
             pets[i]->makeSound();
         }
     }
-    for (int i = 9; i >= 0; i--)
+    for (int i = 0; i < PET_NUM; i++)
         delete pets[i];
     return 0;
 }
