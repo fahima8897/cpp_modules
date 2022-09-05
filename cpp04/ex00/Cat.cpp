@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 16:57:48 by fboumell          #+#    #+#             */
-/*   Updated: 2022/08/26 13:15:11 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/05 13:27:48 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Cat::Cat(const Cat &src)
 Cat &Cat::operator=(const Cat &rhs)
 {
     std::cout << "Copy assignment operator Cat called" << std::endl;   
-    this->_type = rhs._type;
+    this->type = rhs.type;
     return (*this);
 }
 

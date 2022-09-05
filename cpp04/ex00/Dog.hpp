@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 17:01:02 by fboumell          #+#    #+#             */
-/*   Updated: 2022/08/25 14:30:19 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/05 15:54:10 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 
     /*  constructeur & destruceur   */
         Dog();
-        ~Dog();
+        virtual ~Dog();
         
     /*  constructeur de recopie */
         Dog(const Dog &src);

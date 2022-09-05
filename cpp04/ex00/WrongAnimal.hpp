@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 14:46:36 by fboumell          #+#    #+#             */
-/*   Updated: 2022/08/25 16:22:15 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/05 14:55:35 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
     /*  constructeurs et destructeur  */
         WrongAnimal();
         WrongAnimal(std::string str);
-        ~WrongAnimal();
+        virtual ~WrongAnimal();
 
         /*  constructeur de recopie */
         WrongAnimal(const WrongAnimal &src);
