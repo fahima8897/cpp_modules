@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 16:06:29 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/05 13:51:35 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/05 16:05:39 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 
     /*  constructeur & destructeur  */
         WrongCat();
-        ~WrongCat();
+        virtual ~WrongCat();
 
     /*  constructeur de recopie */
         WrongCat(const WrongCat &src);
