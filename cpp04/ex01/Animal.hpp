@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 16:52:20 by fboumell          #+#    #+#             */
-/*   Updated: 2022/08/25 16:24:22 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/05 13:27:21 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Animal
 {
 protected:
     
-    std::string _type;
+    std::string type;
     
 public:
 

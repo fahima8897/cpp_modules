@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 16:52:07 by fboumell          #+#    #+#             */
-/*   Updated: 2022/08/25 14:36:37 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/05 13:27:37 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Animal::Animal()
 
 Animal::Animal(std::string str)
 {
-    _type = str;
+    type = str;
     std::cout << "constructor Animal called" << std::endl;
 }
 
@@ -37,13 +37,13 @@ Animal::Animal(const Animal &src)
 Animal &Animal::operator=(const Animal &rhs)
 {
     std::cout << "Copy assignment operator Animal called" << std::endl;
-    this->_type = rhs._type;
+    this->type = rhs.type;
     return(*this);
 }
 
 std::string Animal::getType() const
 {
-    return (this->_type);
+    return (this->type);
 }
 
 void Animal::makeSound() const
