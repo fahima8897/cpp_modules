@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 16:58:04 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/05 15:54:04 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/07 14:39:29 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 # define CAT_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Cat : public Animal
 {
 private:
-    /* data */
+   
+        Brain   *_brain;
+        
 public:
 
     /*  constructeur & destructeur  */

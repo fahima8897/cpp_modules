@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 17:01:02 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/05 15:54:10 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/07 14:38:45 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 # define DOG_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Dog : public Animal
 {
 private:
-    /* data */
+    
+        Brain   *_brain;
+    
 public:
 
     /*  constructeur & destruceur   */
@@ -32,7 +35,7 @@ public:
         Dog &operator=(const Dog &rhs);
 
     /*  Methodes    */
-    void    makeSound() const;
+        void    makeSound() const;
 
 };
 

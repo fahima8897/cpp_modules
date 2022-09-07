@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 16:40:18 by fboumell          #+#    #+#             */
-/*   Updated: 2022/08/30 13:18:24 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/07 15:36:49 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ class Brain
 
     /*  operateur d'affectation */
         Brain &operator=(const Brain &rhs);
+
 };
 
 #endif
