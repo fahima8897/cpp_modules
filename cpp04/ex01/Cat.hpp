@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 16:58:04 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/07 14:39:29 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/07 18:11:03 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,23 +19,27 @@
 class Cat : public Animal
 {
 private:
-   
+    
         Brain   *_brain;
-        
+    
 public:
 
-    /*  constructeur & destructeur  */
+    /*  constructeur & destruceur   */
         Cat();
         virtual ~Cat();
-
+        
     /*  constructeur de recopie */
         Cat(const Cat &src);
 
     /*  operateur d'affectation */
-        Cat &operator=(const Cat &rhs);
+        Animal &operator=(const Cat &rhs);
 
     /*  Methodes    */
-        void makeSound() const;
+        void    makeSound() const;
+    
+    /*  Getter  */
+        Brain *getBrain() const;
+
 };
 
 #endif

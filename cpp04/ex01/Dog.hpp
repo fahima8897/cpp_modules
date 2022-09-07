@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 17:01:02 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/07 14:38:45 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/07 18:10:42 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,13 @@ public:
         Dog(const Dog &src);
 
     /*  operateur d'affectation */
-        Dog &operator=(const Dog &rhs);
+        Animal &operator=(const Dog &rhs);
 
     /*  Methodes    */
         void    makeSound() const;
+    
+    /*  Getter  */
+        Brain *getBrain() const;
 
 };
 

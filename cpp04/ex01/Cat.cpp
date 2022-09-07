@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 16:57:48 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/07 15:19:21 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/07 18:11:23 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,20 @@ Cat::Cat(const Cat &src)
     *this = src;
 }
 
-Cat &Cat::operator=(const Cat &rhs)
+Animal &Cat::operator=(const Cat &rhs)
 {
     std::cout << "Copy assignment operator Cat called" << std::endl;   
     this->type = rhs.type;
-    *(this->_brain) = *(rhs._brain);
+    *(this->_brain) = *(rhs.getBrain());
     return (*this);
 }
 
 void Cat::makeSound() const
 {
     std::cout << "Miaou Miaou Miaou!" << std::endl;
+}
+
+Brain *Cat::getBrain() const
+{
+    return (this->_brain);
 }

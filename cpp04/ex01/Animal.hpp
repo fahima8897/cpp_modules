@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 16:52:20 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/05 13:27:21 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/07 18:27:21 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iomanip>
 #include <iostream>
+#include "Brain.hpp"
 
 class Animal
 {
@@ -40,6 +41,7 @@ public:
 
     /*  Methodes    */
         virtual void    makeSound() const;
+        virtual Brain *getBrain() const = 0;
         
 };
 
