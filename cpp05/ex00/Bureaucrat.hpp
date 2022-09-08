@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 12:47:43 by fboumell          #+#    #+#             */
-/*   Updated: 2022/08/30 13:14:25 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/08 15:30:50 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,21 @@ public:
 
     /*  constructeurs & destructeurs    */
         Bureaucrat();
+        Bureaucrat(std::string str, int echelon);
         ~Bureaucrat();
 
-    /*  getters */
-        std::string    getName();
-        int   getGrade();
+    /*  Accesseurs */
+        std::string    getName() const;
+        int   getGrade() const;
     
     /*  Methodes    */
-        Bureaucrat operator++(int);
-        Bureaucrat operator--(int);
+        void EchelonUp();
+        void EchelonDown();
+        void GradeTooHighException();
+        void GradeTooLowException();
+        
 };
 
-
-
+std::ostream &operator<<(std::ostream &flux, const Bureaucrat &bureau);
 
 #endif
