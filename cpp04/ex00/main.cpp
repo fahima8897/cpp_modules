@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 17:00:19 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/05 15:00:28 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/13 15:57:31 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,17 @@ int main()
 
     std::cout << std::endl;
     
-    std::cout << "Animal sound :" << std::endl;
+    std::cout << "Animal sound (must be a generic sound):" << std::endl;
     meta->makeSound();
-    std::cout << "WrongAnimal sound :" << std::endl;
+    std::cout << "WrongAnimal sound (must be a generic sound):" << std::endl;
     meta1->makeSound();
-    std::cout << "Dog sound :" << std::endl;
+    std::cout << "Dog sound (must be a dog sound):" << std::endl;
     j->makeSound();
-    std::cout << "Cat sound : " << std::endl;
+    std::cout << "Cat sound (must be a cat sound): " << std::endl;
     i->makeSound();
-    std::cout << "WrongCat sound :" << std::endl;
+    std::cout << "WrongCat sound (must be a generic sound):" << std::endl;
     k->makeSound();
-    std::cout << "WrongCat sound :" << std::endl;
+    std::cout << "WrongCat sound (must be a different sound from a cat):" << std::endl;
     l->makeSound();
 
     std::cout << std::endl;

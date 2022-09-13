@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 12:49:12 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/08 16:22:40 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/13 14:41:32 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,29 @@ int Bureaucrat::getGrade() const
 
 void Bureaucrat::GradeTooHighException()
 {
-    
+    try
+    {
+        if (this->getGrade() < 0)
+            throw std::exception()
+        else
+        
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }   
 }
 
 void Bureaucrat::GradeTooLowException()
 {
-    
+    try
+    {
+        
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
 }
 
 std::ostream &operator<<(std::ostream &flux, const Bureaucrat &bureau)
