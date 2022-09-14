@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 16:40:14 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/07 15:36:46 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/14 14:55:44 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,17 @@ Brain &Brain::operator=(const Brain &rhs)
     int i;
     
     for (i = 0; i < 100; i++)
-        this->ideas[i] = rhs.ideas[i];
+        this->_ideas[i] = rhs._ideas[i];
     return (*this);
+}
+
+std::string Brain::getIdeas(int idea)
+{
+    return (this->_ideas[idea]);
+}
+
+void Brain::setIdea(std::string str, int idea)
+{
+    this->_ideas[idea] = str;
+    return ;
 }

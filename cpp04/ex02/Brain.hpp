@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 16:40:18 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/07 15:36:49 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/14 14:51:22 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,11 @@
 
 class Brain
 {
+     private :
+    
+        std::string _ideas[100];   
         
     public:
-        
-        std::string ideas[100];
 
     /*  constructeurs & destructeurs    */
         Brain();
@@ -32,6 +33,10 @@ class Brain
 
     /*  operateur d'affectation */
         Brain &operator=(const Brain &rhs);
+
+    /*  setter & getter */
+        std::string getIdeas(int idea);
+        void setIdea(std::string str, int idea);
 
 };
 

@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 17:00:50 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/07 19:13:04 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/14 14:52:34 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Dog::Dog(const Dog &src)
     *this = src;
 }
 
-AAnimal &Dog::operator=(const Dog &rhs)
+Dog &Dog::operator=(const Dog &rhs)
 {
     std::cout << "Copy assignment operator Dog called" << std::endl;
     this->type = rhs.type;

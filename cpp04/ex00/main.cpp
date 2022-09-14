@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 17:00:19 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/13 15:57:31 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/14 11:45:11 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ int main()
     j->makeSound();
     std::cout << "Cat sound (must be a cat sound): " << std::endl;
     i->makeSound();
-    std::cout << "WrongCat sound (must be a generic sound):" << std::endl;
+    std::cout << "WrongCat sound (must be a generic sound because there is no virtual methode):" << std::endl;
     k->makeSound();
-    std::cout << "WrongCat sound (must be a different sound from a cat):" << std::endl;
+    std::cout << "WrongCat sound (must not be a sound cat):" << std::endl;
     l->makeSound();
 
     std::cout << std::endl;

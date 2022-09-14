@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 16:58:04 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/07 18:11:03 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/14 14:20:24 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ public:
         Cat(const Cat &src);
 
     /*  operateur d'affectation */
-        Animal &operator=(const Cat &rhs);
+        Cat &operator=(const Cat &rhs);
 
     /*  Methodes    */
         void    makeSound() const;

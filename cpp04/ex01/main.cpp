@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 17:00:19 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/07 18:34:19 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/14 14:34:30 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int main()
 
     Animal *pets[PET_NUM];
 
-    /*  Shallow copy
-    Animal *pet1 = pets[2];*/
+    /*  Shallow copy */
+    // Animal *pet1 = pets[3];
     
     for (int i = 0; i < PET_NUM; i++)
     {
@@ -41,25 +41,31 @@ int main()
     
     for (int i = 0; i < PET_NUM; i++)
     {
-        pets[i]->getBrain()->ideas[0] = "You drive me craazyyy";
-        pets[i]->getBrain()->ideas[1] = "I just can't sleep";
-        pets[i]->getBrain()->ideas[2] = "I am so excited";
-        pets[i]->getBrain()->ideas[3] = "I am in too deep";
+        pets[i]->getBrain()->setIdea("You drive me craazyyy", 0);
+        pets[i]->getBrain()->setIdea("I just can't sleep", 1);
+        pets[i]->getBrain()->setIdea("I am so excited", 2);
+        pets[i]->getBrain()->setIdea("I am in too deep", 3);
     }
+    
+    std::cout << std::endl;
+    std::cout << std::endl;
     
     for (int i = 0; i < PET_NUM; i++)
     {
-        std::cout << pets[i]->getType() << " :" << pets[i]->getBrain()->ideas[0] << std::endl;
-        std::cout << pets[i]->getType() << " :" << pets[i]->getBrain()->ideas[1] << std::endl;
-        std::cout << pets[i]->getType() << " :" << pets[i]->getBrain()->ideas[2] << std::endl;
-        std::cout << pets[i]->getType() << " :" << pets[i]->getBrain()->ideas[3] << std::endl;
+        std::cout << pets[i]->getType() << " :" << pets[i]->getBrain()->getIdeas(0) << std::endl;
+        std::cout << pets[i]->getType() << " :" << pets[i]->getBrain()->getIdeas(1) << std::endl;
+        std::cout << pets[i]->getType() << " :" << pets[i]->getBrain()->getIdeas(2) << std::endl;
+        std::cout << pets[i]->getType() << " :" << pets[i]->getBrain()->getIdeas(3) << std::endl;
     
-        /*  Shallow copy
-        std::cout << pet1->getType() << " :" << pet1->getBrain()->ideas[0] << std::endl;
-        std::cout << pet1->getType() << " :" << pet1->getBrain()->ideas[1] << std::endl;
-        std::cout << pet1->getType() << " :" << pet1->getBrain()->ideas[2] << std::endl;
-        std::cout << pet1->getType() << " :" << pet1->getBrain()->ideas[3] << std::endl;*/
+        /*  Shallow copy */
+        // std::cout << pet1->getType() << " :" << pet1->getBrain()->getIdeas(0) << std::endl;
+        // std::cout << pet1->getType() << " :" << pet1->getBrain()->getIdeas(1) << std::endl;
+        // std::cout << pet1->getType() << " :" << pet1->getBrain()->getIdeas(2) << std::endl;
+        // std::cout << pet1->getType() << " :" << pet1->getBrain()->getIdeas(3) << std::endl;
     }
+
+    std::cout << std::endl;
+    std::cout << std::endl;
     
     for (int i = 0; i < PET_NUM; i++)
         delete pets[i];
