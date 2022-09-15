@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 16:06:26 by fboumell          #+#    #+#             */
-/*   Updated: 2022/08/25 16:08:42 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/15 15:30:40 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ WrongCat::WrongCat(const WrongCat &src)
 
 WrongCat &WrongCat::operator=(const WrongCat &src)
 {
+    if (&src == this)
+        return *this;
     std::cout << "Copy assignment operator WrongCat called" << std::endl;   
     this->_type = src._type;
     return (*this);

@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 16:52:20 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/14 13:28:41 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/15 14:56:10 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ public:
 
     /*  Methodes    */
         virtual void    makeSound() const;
-        virtual Brain *getBrain() const = 0;
         
 };
 

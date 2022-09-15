@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 16:40:14 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/14 14:26:21 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/15 15:31:58 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ Brain::Brain(const Brain &src)
 Brain &Brain::operator=(const Brain &rhs)
 {
     std::cout << "Copy assignment operator Brain called" << std::endl;
-    
+    if (&rhs == this)
+        return *this;
     int i;
-    
     for (i = 0; i < 100; i++)
         this->_ideas[i] = rhs._ideas[i];
     return (*this);
