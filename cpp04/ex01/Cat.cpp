@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 16:57:48 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/15 16:57:24 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/16 14:20:57 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Cat &Cat::operator=(const Cat &rhs)
     std::cout << "Copy assignment operator Cat called" << std::endl;  
     if (&rhs == this)
         return *this;
-    delete _brain; // a revoir car quand on cree un objet sans pointeur il va allouer dynamiquement le _brain car dans c'est precise dans le constructeur
+    delete _brain;
     this->type = rhs.type;
     _brain = new Brain();
     *(this->_brain) = *(rhs._brain);
