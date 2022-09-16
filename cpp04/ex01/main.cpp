@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 17:00:19 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/16 14:23:43 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/16 15:01:06 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@
 int main()
 {
     Animal *pets[PET_NUM];
-    
-    std::cout << std::endl;
     
     for (int i = 0; i < PET_NUM; i++)
     {

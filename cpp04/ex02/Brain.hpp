@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 16:40:18 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/14 14:51:22 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/14 14:22:43 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 
 class Brain
 {
-     private :
+    private :
     
-        std::string _ideas[100];   
+        std::string _ideas[100];
         
     public:
-
+        
     /*  constructeurs & destructeurs    */
         Brain();
         ~Brain();
