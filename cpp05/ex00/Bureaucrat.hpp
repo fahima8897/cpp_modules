@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 12:47:43 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/13 14:37:13 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/16 15:26:06 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,17 @@ public:
     /*  constructeurs & destructeurs    */
         Bureaucrat();
         Bureaucrat(std::string str, int echelon);
+
+        /*  destructeur */
         ~Bureaucrat();
 
-    /*  Accesseurs */
+        /*  constructeur de recopie */
+        Bureaucrat(const Bureaucrat &src);
+
+        /*  operateur d'affectation */
+        Bureaucrat &operator=(const Bureaucrat &rhs);
+
+        /*  Accesseurs */
         std::string    getName() const;
         int   getGrade() const;
     
