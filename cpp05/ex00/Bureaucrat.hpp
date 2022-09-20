@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 12:47:43 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/16 15:26:06 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/20 13:45:25 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ class Bureaucrat
 {
 private:
     
-    int _grade;
     const std::string   _name;
+    int _grade;
     
 public:
 
