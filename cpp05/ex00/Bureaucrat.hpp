@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 12:47:43 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/20 13:45:25 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/20 18:10:09 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,26 @@
 # define BUREAUCRAT_HPP
 
 #include <iomanip>
-#include<iostream>
+#include <iostream>
+#include <stdexcept>
 
 class Bureaucrat
 {
 private:
     
-    const std::string   _name;
-    int _grade;
+    /*  Attributs   */
+        const std::string   _name;
+        int _grade;
+        
+    /*  Nusted classes  */
+        class GradeTooHighException : public std::exception
+        {
+            virtual const char *what() const throw();
+        };
+        class GradeTooLowException : public std::exception
+        {
+            virtual const char *what() const throw();
+        };
     
 public:
 
@@ -29,25 +41,22 @@ public:
         Bureaucrat();
         Bureaucrat(std::string str, int echelon);
 
-        /*  destructeur */
+    /*  destructeur */
         ~Bureaucrat();
 
-        /*  constructeur de recopie */
+    /*  constructeur de recopie */
         Bureaucrat(const Bureaucrat &src);
 
-        /*  operateur d'affectation */
+    /*  operateur d'affectation */
         Bureaucrat &operator=(const Bureaucrat &rhs);
 
-        /*  Accesseurs */
+    /*  Accesseurs */
         std::string    getName() const;
         int   getGrade() const;
     
     /*  Methodes    */
         void EchelonUp();
         void EchelonDown();
-        void GradeTooHighException();
-        void GradeTooLowException();
-        
 };
 
 std::ostream &operator<<(std::ostream &flux, const Bureaucrat &bureau);
