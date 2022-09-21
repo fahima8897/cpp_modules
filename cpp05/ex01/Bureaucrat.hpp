@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 12:47:43 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/20 18:10:09 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/21 16:01:28 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iomanip>
 #include <iostream>
 #include <stdexcept>
+#include "Form.hpp"
 
 class Bureaucrat
 {
@@ -57,6 +58,7 @@ public:
     /*  Methodes    */
         void EchelonUp();
         void EchelonDown();
+        void signForm(Form &form);
 };
 
 std::ostream &operator<<(std::ostream &flux, const Bureaucrat &bureau);
