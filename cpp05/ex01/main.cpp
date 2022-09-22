@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 16:08:02 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/22 14:13:05 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/22 15:18:17 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,32 @@
 
 int main()
 {
-    // try
-    // {
-    //     Bureaucrat  BTS("BTS", 5);
-    //     Form        Dynamite("Dynamite", 6, 20);
-
-    //     std::cout << BTS;
-    //     BTS.signForm(Dynamite);
-    //     std::cout << Dynamite;
-    // }
-    // catch(const std::exception& e)
-    // {
-    //     std::cerr << e.what() << '\n';
-    // }
-
     try
     {
-        Form BTS("Spring Days", 0, 5);
+        Bureaucrat  BTS("BTS", 4);
+        Form        Dynamite("Dynamite", 5, 2);
+
+        std::cout << BTS;
+        Dynamite.beSigned(BTS);
+        BTS.signForm(Dynamite);
+        std::cout << Dynamite;
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
+    std::cout << std::endl;
+    try
+    {
+        Form BTS("Spring Days", 151, 5);
+        std::cout << BTS;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+
+    
     
     
 

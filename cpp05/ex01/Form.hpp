@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 12:36:24 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/22 13:59:54 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/22 15:01:18 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <iostream>
 #include <stdexcept>
 #include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form
 {
@@ -31,7 +33,7 @@ private:
     {
         virtual const char *what() const throw();
     };
-    class GradeTooLowExcetion : std::exception
+    class GradeTooLowException : std::exception
     {
         virtual const char *what() const throw();
     };

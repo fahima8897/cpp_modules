@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 12:47:43 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/22 13:48:26 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/22 14:47:22 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <iostream>
 #include <stdexcept>
 #include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
