@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 12:36:24 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/22 15:01:18 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/22 16:20:14 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ private:
     const int           _gradeToSign;
     const int           _gradeToExecute;
     
-    class GradeTooHighException : std::exception
+    class GradeTooHighException : public std::exception
     {
         virtual const char *what() const throw();
     };
-    class GradeTooLowException : std::exception
+    class GradeTooLowException : public std::exception
     {
         virtual const char *what() const throw();
     };

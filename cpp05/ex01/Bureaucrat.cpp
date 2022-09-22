@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 12:49:12 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/22 13:58:15 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/22 16:31:30 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void Bureaucrat::signForm(Form &form) const
     }
     catch(const std::exception& e)
     {
-        std::cerr << this->getName() << " couldn't sign " << form.getName() << " ";
+        std::cerr << this->getName() << " couldn't sign " << form.getName() << " because ";
         std::cerr << e.what() << '\n';
     }
 } 
