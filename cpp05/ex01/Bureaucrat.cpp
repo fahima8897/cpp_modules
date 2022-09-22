@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 12:49:12 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/21 17:31:05 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/22 11:46:46 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,13 +83,16 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
     return ("The grade is too Low!");
 }
 
-void Bureaucrat::signForm(Form &form) //a reoir avec condition
+void Bureaucrat::signForm(const Form &form) //a reoir avec condition
 {
     if (form.getSigned() == 1)
         std::cout << this->getName() << " signed " << form.getName() << std::endl;
-    else if (form.getSigned() == 0) //verifier si aussi grade suffisant
-        std::cout << this->getName() << " couldn't sign " << form.getName()  << " because of the grade" << std::endl;
-} //appeler fonction besigned si pas signe
+    else if (form.getSigned() == 0 && (form.getGradeToSign() < 1 || form.getGradeToExecute() < 1)
+        || form.getGradeToSign() > 150 || form.getGradeToExecute() > 150) 
+        std::cout << this->getName() << " couldn't sign " << form.getName()  << " because of his grade" << std::endl;
+    else if (form.getSigned() == 0)
+        form.beSigned(*this);
+} 
 
 std::ostream &operator<<(std::ostream &flux, const Bureaucrat &bureau)
 {

@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 12:36:24 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/21 17:26:50 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/22 11:20:04 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ public:
     ~Form();
 
     /*  Accessors   */
-    std::string getName();
-    bool        getSigned();
+    std::string getName() const;
+    bool        getSigned() const;
     int         getGradeToSign() const;
     int         getGradeToExecute() const;
 
