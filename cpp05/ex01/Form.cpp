@@ -6,13 +6,13 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 12:37:40 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/22 11:55:33 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/22 13:59:41 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form() /*: _name("Default name"), _signed(0), _gradeToSign(1), _gradeToExecute(150)*/
+Form::Form() : _name("Default name"), _signed(0), _gradeToSign(1), _gradeToExecute(1)
 {
     std::cout << "Default constructor Form called" << std::endl;
 }
@@ -83,11 +83,11 @@ int Form::getGradeToSign() const
     return (this->_gradeToSign);
 }
 
-void Form::beSigned(const Bureaucrat &bureaucrat)
+void Form::beSigned(Bureaucrat const &bureaucrat)
 {
     if (bureaucrat.getGrade() <= this->getGradeToSign())
         this->getSigned() == 1;
-    else if (bureaucrat.getGrade() > this->getGradeToSign())
+    else
         throw Form::GradeTooLowExcetion();
 }
 

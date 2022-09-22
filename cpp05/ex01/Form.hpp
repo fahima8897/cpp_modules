@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 12:36:24 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/22 11:20:04 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/22 13:59:54 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ public:
     int         getGradeToExecute() const;
 
     /*  Methodes    */
-    void beSigned(const Bureaucrat &bureaucrat);
+    void beSigned(Bureaucrat const &bureaucrat);
     
 };
 
