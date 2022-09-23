@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:42:27 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/23 15:47:53 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/23 17:34:13 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,10 @@ PresidentialPardonForm::~PresidentialPardonForm()
 std::string PresidentialPardonForm::getTarget() const
 {
     return (this->_target);
+}
+
+void PresidentialPardonForm::action()
+{
+    std::cout << this->getTarget() << " has been forgiven by Zaphod Beeblebrox" << std::endl;
 }
 

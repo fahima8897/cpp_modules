@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 12:47:43 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/22 14:47:22 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/23 17:42:00 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ public:
         void EchelonUp();
         void EchelonDown();
         void signForm(Form &form) const;
+        void executeForm(Form const &form);
 };
 
 std::ostream &operator<<(std::ostream &flux, const Bureaucrat &bureau);

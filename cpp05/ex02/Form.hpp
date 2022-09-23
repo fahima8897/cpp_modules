@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 12:36:24 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/23 12:00:53 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/23 17:37:00 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,10 @@ private:
     {
         virtual const char *what() const throw();
     };
+    class FormHasToBeSigned : public std::exception
+    {
+        virtual const char *what() const throw();
+    };
     
 public:
 
@@ -61,6 +65,8 @@ public:
 
     /*  Methodes    */
     void beSigned(Bureaucrat const &bureaucrat);
+    void execute(Bureaucrat const &executor) const;
+    virtual void action() const = 0;
     
 };
 

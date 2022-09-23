@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 12:49:12 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/22 16:31:30 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/23 17:45:43 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,22 @@ void Bureaucrat::signForm(Form &form) const
         std::cerr << this->getName() << " couldn't sign " << form.getName() << " because ";
         std::cerr << e.what() << '\n';
     }
-} 
+}
+
+void Bureaucrat::executeForm(Form const &form)
+{
+    try
+    {
+        form.execute(*this);
+        std::cout << this->_name << " executed " << form.getName() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << this->_name << " couldn't execute " << form.getName() << " because ";
+        std::cerr << e.what() << '\n';
+    }
+    
+}
 
 std::ostream &operator<<(std::ostream &flux, const Bureaucrat &bureau)
 {

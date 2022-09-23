@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 12:37:40 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/23 11:06:09 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/23 17:39:16 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,11 @@ const char *Form::GradeTooLowException::what() const throw()
     return ("The grade is too Low!");
 }
 
+const char *Form::FormHasToBeSigned::what() const throw()
+{
+    return ("The Form is not signed!");
+}
+
 std::string Form::getName() const
 {
     return (this->_name);
@@ -86,6 +91,16 @@ void Form::beSigned(Bureaucrat const &bureaucrat)
         throw Form::GradeTooLowException();
     else
         this->_signed = 1;
+}
+
+void Form::execute(const Bureaucrat &executor) const
+{
+    if (this->getSigned() == 0)
+        throw Form::FormHasToBeSigned();
+    else if (executor.getGrade() > this->getGradeToExecute())
+        throw Form::GradeTooLowException();
+    else
+        this->action();
 }
 
 std::ostream &operator<<(std::ostream &flux, const Form &form)
