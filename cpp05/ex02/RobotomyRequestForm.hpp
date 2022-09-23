@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:42:45 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/23 13:45:42 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/23 14:35:43 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 
 #include <iostream>
 #include <iomanip>
+#include "Form.hpp"
 
-class RobotomyRequestForm
+class RobotomyRequestForm : public Form
 {
 private:
     
@@ -35,6 +36,9 @@ public:
 
     /* Destructeur  */
         virtual ~RobotomyRequestForm();
+    
+    /*  Accesseur   */
+        std::string getTarget() const;
 };
 
 #endif
