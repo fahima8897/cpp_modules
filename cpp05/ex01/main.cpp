@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 16:08:02 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/22 17:03:00 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/23 11:08:45 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,9 @@ int main()
     {
         std::cerr << e.what() << '\n';
     }
+    
     std::cout << std::endl;
+    
     try
     {
         Bureaucrat  Britney("Britney", 3);
@@ -52,7 +54,29 @@ int main()
     {
         std::cerr << e.what() << '\n';
     }
+    
     std::cout << std::endl;
+    
+    try
+    {
+        Bureaucrat  Fairy("Fairy", 56);
+        Form        Witch("Witch", 57, 96);
+        Form        Queen(Witch);
+
+        Fairy.EchelonUp();
+        std::cout << Fairy;
+        Fairy.signForm(Witch);
+        std::cout << Witch;
+        Fairy.signForm(Queen);
+        std::cout << Queen;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
+    std::cout << std::endl;
+    
     try
     {
         Bureaucrat  Britney("Britney", 3);
@@ -67,7 +91,9 @@ int main()
     {
         std::cerr << e.what() << '\n';
     }
+
     std::cout << std::endl;
+    
     try
     {
         Bureaucrat  Primark("Primark", 7);
@@ -85,7 +111,9 @@ int main()
     {
         std::cerr << e.what() << '\n';
     }
+
     std::cout << std::endl;
+    
     try
     {
         Bureaucrat  Minou("Minou", 35);
@@ -98,7 +126,9 @@ int main()
     {
         std::cerr << e.what() << '\n';
     }
+    
     std::cout << std::endl;
+    
     try
     {
         Bureaucrat  BTS("BTS", 1);
@@ -111,7 +141,9 @@ int main()
     {
         std::cerr << e.what() << '\n';
     }
+
     std::cout << std::endl;
+    
     try
     {
         Form BTS("Spring Days", -6, 30);
@@ -120,7 +152,9 @@ int main()
     {
         std::cerr << e.what() << '\n';
     }
+
     std::cout << std::endl;
+    
     try
     {
         Form BTS("Spring Days", 3, 155);

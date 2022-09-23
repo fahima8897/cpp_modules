@@ -5,20 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/07/08 16:51:19 by fboumell          #+#    #+#              #
-#    Updated: 2022/09/07 19:16:52 by fboumell         ###   ########.fr        #
+#    Created: 2022/08/30 12:39:42 by fboumell          #+#    #+#              #
+#    Updated: 2022/09/23 11:39:03 by fboumell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = AAnimal
+NAME = Form
 
 SRCS = main.cpp \
-		AAnimal.cpp \
-		Dog.cpp \
-		Cat.cpp \
-		WrongAAnimal.cpp \
-		WrongCat.cpp \
-		Brain.cpp \
+		Bureaucrat.cpp \
+		Form.cpp \
+		SchrubberyCreationForm.cpp \
+		RobotomRequestForm.cpp \
+		PresidentialPardonForm.cpp \
 
 OBJS = ${SRCS:.cpp=.o}
 
