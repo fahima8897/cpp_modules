@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:43:05 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/23 17:33:42 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/23 18:13:45 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ public:
         std::string getTarget() const;
 
     /*  Methods */
-        void    action();
+        virtual void    action() const;
 };
 
 #endif

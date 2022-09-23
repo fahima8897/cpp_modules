@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:43:01 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/23 17:34:00 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/23 18:14:00 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ std::string ShrubberyCreationForm::getTarget() const
     return (this->_target);
 }
 
-void ShrubberyCreationForm::action()
+void ShrubberyCreationForm::action() const 
 {
     std::string filename(this->getTarget() + "_shrubbery");
     std::fstream output;

@@ -6,7 +6,7 @@
 #    By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/30 12:39:42 by fboumell          #+#    #+#              #
-#    Updated: 2022/09/23 11:39:03 by fboumell         ###   ########.fr        #
+#    Updated: 2022/09/23 18:17:21 by fboumell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@ NAME = Form
 SRCS = main.cpp \
 		Bureaucrat.cpp \
 		Form.cpp \
-		SchrubberyCreationForm.cpp \
-		RobotomRequestForm.cpp \
+		ShrubberyCreationForm.cpp \
+		RobotomyRequestForm.cpp \
 		PresidentialPardonForm.cpp \
 
 OBJS = ${SRCS:.cpp=.o}
