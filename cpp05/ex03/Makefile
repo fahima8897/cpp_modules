@@ -6,11 +6,11 @@
 #    By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/30 12:39:42 by fboumell          #+#    #+#              #
-#    Updated: 2022/09/23 19:03:08 by fboumell         ###   ########.fr        #
+#    Updated: 2022/09/25 16:03:37 by fboumell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Form
+NAME = Intern
 
 SRCS = main.cpp \
 		Bureaucrat.cpp \

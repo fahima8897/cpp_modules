@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 19:03:55 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/23 19:28:43 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/25 15:36:14 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,17 @@
 #include <iostream>
 #include <stdexcept>
 #include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 class Intern
 {
 private:
+
+    Form *_ShrubberyForm(std::string target);
+    Form *_RobotomyForm(std::string target);
+    Form *_PresidentialForm(std::string target);
     
     class FormDoesNotExist : public std::exception
     {

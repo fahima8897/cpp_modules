@@ -6,15 +6,12 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 16:08:02 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/23 11:08:45 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/25 17:30:48 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
-
-
-// ajouter le cas d'une copie d'un formulaire
 
 int main()
 {
