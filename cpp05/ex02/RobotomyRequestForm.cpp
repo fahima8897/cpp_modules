@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:42:40 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/23 18:14:08 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/26 12:21:14 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ std::string RobotomyRequestForm::getTarget() const
 void RobotomyRequestForm::action() const 
 {
     std::cout << "BRUIT DE PERCEUSE!!!!" << std::endl;
-    std::srand(time(0));
+    // std::srand(time(0));
     if (std::rand() % 2 == 0)
         std::cout << this->getTarget() << " has been successfully robotomised" << std::endl;
     else

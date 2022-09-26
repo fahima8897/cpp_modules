@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 16:08:02 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/25 17:30:48 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/26 11:44:07 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,23 +66,6 @@ int main()
         std::cout << Witch;
         Fairy.signForm(Queen);
         std::cout << Queen;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    
-    std::cout << std::endl;
-    
-    try
-    {
-        Bureaucrat  Britney("Britney", 3);
-        Form        Christina("Christina", 3, 2);
-
-        Britney.EchelonDown();
-        std::cout << Britney;
-        Britney.signForm(Christina);
-        std::cout << Christina;
     }
     catch(const std::exception& e)
     {
@@ -163,3 +146,4 @@ int main()
 
     return 0;
 }
+

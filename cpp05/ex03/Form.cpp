@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 12:37:40 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/23 17:39:16 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/26 11:41:03 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Form::Form() : _name("Default name"), _signed(0), _gradeToSign(150), _gradeToExe
     std::cout << "Default constructor Form called" << std::endl;
 }
 
-Form::Form(std::string str, const int sign, const int execute) : _name(str), _gradeToSign(sign),
+Form::Form(std::string str, const int sign, const int execute) : _name(str), _signed(0), _gradeToSign(sign),
 _gradeToExecute(execute)
 {
     if (this->getGradeToSign() < 1 || this->getGradeToExecute() < 1)

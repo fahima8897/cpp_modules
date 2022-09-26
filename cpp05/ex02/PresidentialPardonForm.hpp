@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 11:42:35 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/23 18:14:14 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/26 12:16:35 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class PresidentialPardonForm : public Form
 {
 private:
     
-    std::string _target;
+        std::string _target;
     
 public:
     /*  Construceurs    */

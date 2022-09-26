@@ -6,13 +6,13 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 12:49:12 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/22 16:31:30 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/26 11:12:08 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat() : _name("Default name"), _grade(150)
 {
     std::cout << "Default constructor called" << std::endl;
 }

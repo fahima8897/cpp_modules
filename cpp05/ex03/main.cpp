@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 16:08:02 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/25 16:52:47 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/26 14:06:33 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main()
 
         newForm = stagiaire.makeForm("ShrubberyForm", "Jardin");
         delete newForm;
-        newForm = stagiaire.makeForm("", "Robot");
+        newForm = stagiaire.makeForm("grg", "Robot");
         delete newForm;
         newForm = stagiaire.makeForm("RobotomyForm", "Robot");
         delete newForm;

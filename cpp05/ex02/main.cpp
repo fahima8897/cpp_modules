@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 16:08:02 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/25 17:26:22 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/26 13:33:07 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int main()
         PresidentialPardonForm  form3("criminel");
         
         form1.action();
+        form2.action();
         form2.action();
         form3.action();
         
@@ -63,6 +64,9 @@ int main()
         Humain.signForm(Pardon);
         Humain.signForm(PardonEncore);
         Humain.executeForm(Pardon);
+        Humain.EchelonUp();
+        Humain.EchelonUp();
+        Humain.executeForm(PardonEncore);
         
     }
     catch(const std::exception& e)
@@ -72,3 +76,4 @@ int main()
     
     return 0;
 }
+
