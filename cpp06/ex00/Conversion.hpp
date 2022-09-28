@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 16:36:48 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/27 16:31:29 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/28 16:59:45 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,32 @@ private:
     double  _double;
     
 public:
-    Conversion();
-    ~Conversion();
+
+    /*  constructors    */
+        Conversion();
+        Conversion(char *str);
+
+    /*  copy constructor    */
+        Conversion(const Conversion &src);
+
+    /*  operateur d'affectation */
+        Conversion &operator=(const Conversion &rhs);
+
+    /*  getter  */
+        char getChar() const;
+        int  getInt() const;
+        float getFloat() const;
+        double getDouble() const;   
+        
+    /*  destructor  */
+        ~Conversion();
+        
+    /*  Methodes    */
+        void    ConvertInt();
+        void    ConvertChar();
+        void    ConvertFloat();
+        void    ConvertDouble();
+    
 };
 
 

@@ -5,36 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/26 16:37:07 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/28 17:05:21 by fboumell         ###   ########.fr       */
+/*   Created: 2022/09/28 17:39:09 by fboumell          #+#    #+#             */
+/*   Updated: 2022/09/28 17:54:03 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Conversion.hpp"
+#include "Whatever.hpp"
 
-void    convert(char *str)
+int main( void ) 
 {
-}
-
-
-int main(int ac, char **av)
-{
-    std::string str = NULL;;
-    
-    if (ac == 2)
-    {
-        str = std::string(av[1]);
-        Conversion  toConvert(av[1]);
-        
-        toConvert.ConvertInt();
-        toConvert.ConvertChar();
-        toConvert.ConvertFloat();
-        toConvert.ConvertDouble();
-    }
-    else
-    {
-        std::cout << "Wrong number of arguments" << std::endl;
-        return (1);
-    }
+    int a = 2;
+    int b = 3;
+    ::swap( a, b );
+    std::cout << "a = " << a << ", b = " << b << std::endl;
+    std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
+    std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+    std::string c = "chaine1";
+    std::string d = "chaine2";
+    ::swap(c, d);
+    std::cout << "c = " << c << ", d = " << d << std::endl;
+    std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
+    std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
     return 0;
 }

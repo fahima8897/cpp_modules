@@ -5,15 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/08/30 12:39:42 by fboumell          #+#    #+#              #
-#    Updated: 2022/09/28 14:56:48 by fboumell         ###   ########.fr        #
+#    Created: 2022/09/28 17:38:39 by fboumell          #+#    #+#              #
+#    Updated: 2022/09/28 17:39:05 by fboumell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Coversion
+NAME = Template
 
-SRCS = Conversion.cpp \
-		main.cpp \
+SRCS = main.cpp \
 
 OBJS = ${SRCS:.cpp=.o}
 
