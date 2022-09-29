@@ -1,18 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 17:44:12 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/29 19:02:33 by fboumell         ###   ########.fr       */
+/*   Created: 2022/09/29 19:07:40 by fboumell          #+#    #+#             */
+/*   Updated: 2022/09/29 19:08:21 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iter.hpp"
+#ifndef ARRAY_HPP
+# define ARRAY_HPP
 
-int main()
+#include <iomanip>
+#include <iostream>
+
+class Array
 {
-    return 0;
+private:
+    /* data */
+public:
+    Array(/* args */);
+    ~Array();
+};
+
+Array::Array(/* args */)
+{
 }
+
+Array::~Array()
+{
+}
+
+
+#endif
