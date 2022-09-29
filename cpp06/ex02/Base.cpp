@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 11:37:52 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/28 14:26:37 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/29 15:20:35 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Base *generate(void)
     Base    *base;
 
     srand(time(NULL));
-    randomBase = rand() % 3 + 1; // +1 pour pour generer un intervalle entre 1 a 3
+    randomBase = rand() % 3 + 1;
     switch (randomBase)
     {
         case 1:

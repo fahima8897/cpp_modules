@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 16:36:48 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/28 16:59:45 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/29 14:13:22 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,24 @@
 
 #include <iomanip>
 #include <iostream>
+#include <cmath>
 
 class Conversion
 {
 private:
-    
-    char    _char;
-    int     _int;
-    float   _float;
-    double  _double;
+
+        double      _d;
+
+        class BadArgument : public std::exception
+        {
+            const char *what() const throw();
+        };
     
 public:
 
     /*  constructors    */
         Conversion();
-        Conversion(char *str);
+        Conversion(std::string str);
 
     /*  copy constructor    */
         Conversion(const Conversion &src);
@@ -37,22 +40,15 @@ public:
     /*  operateur d'affectation */
         Conversion &operator=(const Conversion &rhs);
 
-    /*  getter  */
-        char getChar() const;
-        int  getInt() const;
-        float getFloat() const;
-        double getDouble() const;   
-        
     /*  destructor  */
         ~Conversion();
         
     /*  Methodes    */
-        void    ConvertInt();
         void    ConvertChar();
+        void    ConvertInt();
         void    ConvertFloat();
         void    ConvertDouble();
     
 };
-
 
 #endif
