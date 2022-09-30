@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 19:07:40 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/30 14:45:19 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/30 17:33:33 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iomanip>
 #include <iostream>
 
+template<class T>
 class Array
 {
 private:
@@ -24,7 +25,10 @@ public:
 
     /*  constructeurs   */
     Array();
-    Array()
+    Array(unsigned int n);
+
+    /*  copy constructor    */
+    
 
     /*  Destructeur */
     ~Array();
