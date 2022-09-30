@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 17:39:09 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/28 17:54:03 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/30 12:02:33 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,3 +28,4 @@ int main( void )
     std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
     return 0;
 }
+

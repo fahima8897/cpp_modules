@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 19:07:40 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/29 19:08:21 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/09/30 14:45:19 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,12 @@ class Array
 private:
     /* data */
 public:
-    Array(/* args */);
+
+    /*  constructeurs   */
+    Array();
+    Array()
+
+    /*  Destructeur */
     ~Array();
 };
 
