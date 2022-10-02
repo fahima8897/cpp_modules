@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 17:44:09 by fboumell          #+#    #+#             */
-/*   Updated: 2022/09/30 16:37:04 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/10/02 11:54:32 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 #include <iomanip>
 #include <iostream>
-#include <cstddef>
 
 template<typename T>
 void iter(T *tab, size_t size, void(*f)(T &ref))
