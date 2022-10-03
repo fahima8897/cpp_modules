@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 11:57:56 by fboumell          #+#    #+#             */
-/*   Updated: 2022/10/03 16:35:19 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/10/03 17:27:34 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,10 @@ public:
     /*  Destructeur */
     ~MutantStack() {};
 
+    /*  Iterateur   */
     typedef typename std::deque<T>::iterator iterator;
     
+    /*  Methodes    */
     iterator begin()
     {
         return (this->c.begin());

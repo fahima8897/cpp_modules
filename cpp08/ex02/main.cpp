@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 12:00:06 by fboumell          #+#    #+#             */
-/*   Updated: 2022/10/03 17:24:29 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/10/03 17:53:10 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,18 @@ int main()
             std::cout << "-> " << *it << std::endl;
             ++it;
         }
+        
+        std::cout << std::endl;
+        std::cout << "--- Test with copying mstack with container stack<T> ---" << std::endl;
+        
         std::stack<int> s(mstack);
+        std::cout << "Size of the stack : " << s.size() << std::endl;
+        std::cout << "Top of s(mstack) : " << s.top() << std::endl;
+        s.pop();
+        std::cout << "Size of the s(mstack) after removing the top element : " << s.size() << std::endl;
+        std::cout << "Size of the mstack : " << mstack.size() << std::endl;
+        
+        
     }
     
     std::cout << std::endl;
@@ -64,6 +75,25 @@ int main()
         ++it;
         --it;
         std::cout << "Elements in the list from the front to the back : " << std::endl;
+        while (it != ite)
+        {
+            std::cout << "-> " << *it << std::endl;
+            ++it;
+        }
+    }
+    std::cout << std::endl;
+    std::cout << "--- Test with MutantStack copy ---" << std::endl;
+    {
+        MutantStack<std::string> stack1;
+        stack1.push("Hello Bitchies");
+        stack1.push("WTF");
+        stack1.push("Period ah Period Oh!");
+        std::cout << "Top of the stack : " << stack1.top() << std::endl;
+        MutantStack<std::string> stack2;
+        stack2 = stack1;
+        MutantStack<std::string>::iterator it = stack2.begin();
+        MutantStack<std::string>::iterator ite = stack2.end();
+        std::cout << "Elements in the stack2 from the front to the back : " << std::endl;
         while (it != ite)
         {
             std::cout << "-> " << *it << std::endl;
