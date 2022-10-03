@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 17:48:03 by fboumell          #+#    #+#             */
-/*   Updated: 2022/10/02 20:36:40 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/10/03 12:27:28 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,14 @@ class NotFoundException : public std::exception
 };
 
 template<typename T>
-typename T::iterator easyfin(T &container, int n)
+typename T::iterator easyfind(T &container, int n)
 {
     typename T::iterator it;
     
     it = find(container.begin(), container.end(), n);
-    if ()
+    if (it == container.end())
+        throw NotFoundException();
+    return (it);
 }
 
 #endif
