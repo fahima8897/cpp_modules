@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 11:53:25 by fboumell          #+#    #+#             */
-/*   Updated: 2022/10/03 20:47:46 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/10/04 14:32:50 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 #include <algorithm>
 #include <time.h>
 #include <limits.h>
-#include <list>
 
 class Span
 {
@@ -54,10 +53,11 @@ public:
     ~Span();
     
     /*  Methode */
-    void addNumber(int nb);
-    void addNumbrMulti(int nb);
-    int shortestSpan();
-    int longestSpan();
+    void    addNumber(int nb);
+    void    addRandomNbr();
+    void    addMulti(std::vector<int>::iterator begin, std::vector<int>::iterator end);
+    int     shortestSpan();
+    int     longestSpan();
 };
 
 #endif

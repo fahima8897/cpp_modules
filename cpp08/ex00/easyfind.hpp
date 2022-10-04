@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 17:48:03 by fboumell          #+#    #+#             */
-/*   Updated: 2022/10/03 12:27:28 by fboumell         ###   ########.fr       */
+/*   Updated: 2022/10/04 15:26:42 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <iostream>
 #include <stdexcept>
 #include <algorithm>
+#include <list>
+#include <vector>
 
 class NotFoundException : public std::exception
 {
