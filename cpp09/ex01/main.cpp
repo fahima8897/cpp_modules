@@ -6,11 +6,14 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 13:58:39 by fboumell          #+#    #+#             */
-/*   Updated: 2023/03/06 14:35:08 by fboumell         ###   ########.fr       */
+/*   Updated: 2023/03/06 17:59:16 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
+
+// pour utiliser "pop" verifier que la pile n'est pas vide : if (!_pile.empty())
+// idem pour "top"
 
 int main(int ac, char **av)
 {
