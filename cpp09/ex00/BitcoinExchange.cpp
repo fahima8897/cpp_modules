@@ -6,10 +6,12 @@
 
 BitcoinExchange::BitcoinExchange()
 {
+	std::cout << "Default constructor BitcoinExchange called\n";
 }
 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &src)
 {
+	*this = src;
 }
 
 
@@ -19,6 +21,7 @@ BitcoinExchange::BitcoinExchange(const BitcoinExchange &src)
 
 BitcoinExchange::~BitcoinExchange()
 {
+	std::cout << "Destructor BitcoinExchange called\n";
 }
 
 

@@ -6,10 +6,12 @@
 
 PmergeMe::PmergeMe()
 {
+	std::cout << "Default constructor PmergeMe called\n";
 }
 
 PmergeMe::PmergeMe(const PmergeMe &src)
 {
+	*this = src;
 }
 
 
@@ -19,6 +21,7 @@ PmergeMe::PmergeMe(const PmergeMe &src)
 
 PmergeMe::~PmergeMe()
 {
+	std::cout << "Destructor PmergeMe called\n";
 }
 
 

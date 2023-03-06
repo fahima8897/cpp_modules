@@ -3,6 +3,7 @@
 
 # include <iostream>
 # include <string>
+# include <stack>
 
 class RPN
 {
@@ -16,6 +17,7 @@ class RPN
 		RPN &operator=(RPN const &rhs);
 
 	private:
+		std::stack<int> _pile;
 
 };
 
