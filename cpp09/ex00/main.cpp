@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 13:56:43 by fboumell          #+#    #+#             */
-/*   Updated: 2023/03/01 16:32:38 by fboumell         ###   ########.fr       */
+/*   Updated: 2023/03/17 15:24:59 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ int main(int ac, char **av)
         file.open(av[1]);
         if (file.good())
         {
-            std::cout << "Hi i am open" << std::endl;
+            BitcoinExchange data = BitcoinExchange();
+            data.fillMap();
+            // std::cout << "Hi i am open" << std::endl;
         }
         else
             std::cout << "Error: could not open file." << std::endl;

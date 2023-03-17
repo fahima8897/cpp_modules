@@ -3,6 +3,9 @@
 
 # include <iostream>
 # include <string>
+# include <map>
+# include <fstream>
+# include <math.h>
 
 class BitcoinExchange
 {
@@ -15,7 +18,15 @@ class BitcoinExchange
 
 		BitcoinExchange &operator=(BitcoinExchange const &rhs);
 
+		std::map<std::string, float> const &getMap() const;
+
+		void fillMap();
+
+
+
 	private:
+
+	 	std::map<std::string, float> _map;
 
 };
 
