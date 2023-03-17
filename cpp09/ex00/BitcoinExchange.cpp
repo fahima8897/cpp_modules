@@ -33,6 +33,7 @@ BitcoinExchange &BitcoinExchange::operator=(BitcoinExchange const &rhs)
 {
 	if ( this == &rhs )
 		return *this;
+	this->_map = rhs._map;
 	return *this;
 }
 
@@ -46,6 +47,40 @@ BitcoinExchange &BitcoinExchange::operator=(BitcoinExchange const &rhs)
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
+
+bool BitcoinExchange::dateChecker(std::string date)
+{
+	size_t pos;
+	std::string rest;
+	std::string year;
+	std::string month;
+	std::string day;
+
+	pos = date.find("-");
+	year = date.substr(0, pos);
+	rest = date.substr(pos + 1);
+	pos = rest.find("-");
+	month = rest.substr(0, pos);
+	// day = rest.substr(pos + 1, 2);
+	// std::cout << year << std::endl;
+	// std::cout << month << std::endl;
+	// std::cout << day << std::endl;
+
+	if (year.size() > 4)
+		return false;
+	if (atoi(month.c_str()) < 1 || atoi(month.c_str()) > 12)
+		return false;
+	if (atoi(month.c_str()) == 2)
+		if (atoi(day.c_str()) < 1 || atoi(day.c_str()) > 28)
+			return false;
+	if (atoi(month.c_str()) == 1 || atoi(month.c_str()) == 0 ||atoi(month.c_str()) == 5 ||atoi(month.c_str()) == 7 || atoi(month.c_str()) == 8 || atoi(month.c_str()) == 10 || atoi(month.c_str()) == 12)
+		if (atoi(day.c_str()) < 1 || atoi(day.c_str()) > 31)
+			return false;
+	if (atoi(month.c_str()) == 4 || atoi(month.c_str()) == 6 ||atoi(month.c_str()) == 9 ||atoi(month.c_str()) == 11)
+		if (atoi(day.c_str()) < 1 || atoi(day.c_str()) > 30)
+			return false;
+	return true;
+}
 
 void BitcoinExchange::fillMap()
 {
@@ -68,10 +103,10 @@ void BitcoinExchange::fillMap()
 				value = line.substr(found + 1);
 				this->_map.insert(std::pair<std::string, float>(date, atof(value.c_str())));
 				std::map<std::string, float>::iterator it;
-				for (it = this->_map.begin(); it != this->_map.end(); it++)
-				{
-					std::cout << it->first << " - " << it->second << std::endl;
-				}
+				// for (it = this->_map.begin(); it != this->_map.end(); it++)
+				// {
+				// 	std::cout << it->first << " - " << it->second << std::endl;
+				// }
 			}
 		}
 		
@@ -82,6 +117,12 @@ void BitcoinExchange::fillMap()
 
 }
 
+
+void BitcoinExchange::inputChecker(std::string line)
+{
+	if (dateChecker(line) == false)
+		std::cout << "Error: bad input => " << line << std::endl;
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
