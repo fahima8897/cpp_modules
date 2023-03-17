@@ -82,6 +82,22 @@ bool BitcoinExchange::dateChecker(std::string date)
 	return true;
 }
 
+bool BitcoinExchange::valueChecker(std::string value)
+{
+	size_t pos;
+	std::string nb;
+
+	if (!value.find("|"))
+		return false;
+	pos = value.find("|");
+	nb = value.substr(pos + 1);
+	if (atoi(nb.c_str()) < 0)
+		std::cout << "Error: not a positive number." << std::endl;
+	if (atoi(nb.c_str()) < 1000)
+		std::cout << "Error: too large a number." << std::endl;
+	return true;
+}
+
 void BitcoinExchange::fillMap()
 {
 	std::string line;
@@ -104,9 +120,7 @@ void BitcoinExchange::fillMap()
 				this->_map.insert(std::pair<std::string, float>(date, atof(value.c_str())));
 				std::map<std::string, float>::iterator it;
 				// for (it = this->_map.begin(); it != this->_map.end(); it++)
-				// {
-				// 	std::cout << it->first << " - " << it->second << std::endl;
-				// }
+					// 	std::cout << it->first << " - " << it->second << std::endl;
 			}
 		}
 		
@@ -121,6 +135,8 @@ void BitcoinExchange::fillMap()
 void BitcoinExchange::inputChecker(std::string line)
 {
 	if (dateChecker(line) == false)
+		std::cout << "Error: bad input => " << line << std::endl;
+	if (valueChecker(line) == false)
 		std::cout << "Error: bad input => " << line << std::endl;
 }
 

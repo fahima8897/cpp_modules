@@ -21,6 +21,7 @@ class BitcoinExchange
 		std::map<std::string, float> const &getMap() const;
 
 		bool dateChecker(std::string date);
+		bool valueChecker(std::string value);
 		void fillMap();
 		void inputChecker(std::string line);
 
