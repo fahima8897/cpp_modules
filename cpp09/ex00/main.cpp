@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 13:56:43 by fboumell          #+#    #+#             */
-/*   Updated: 2023/03/17 17:57:49 by fboumell         ###   ########.fr       */
+/*   Updated: 2023/03/20 14:03:53 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int main(int ac, char **av)
             data.fillMap();
             while(getline(file, line))
                 data.inputChecker(line);
+            
         }
         else
             std::cout << "Error: could not open file." << std::endl;

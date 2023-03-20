@@ -6,6 +6,9 @@
 # include <map>
 # include <fstream>
 # include <math.h>
+# include <algorithm>
+
+#define STR_INT_MAX std::string("2147483647")
 
 class BitcoinExchange
 {
@@ -20,8 +23,8 @@ class BitcoinExchange
 
 		std::map<std::string, float> const &getMap() const;
 
-		bool dateChecker(std::string date);
-		bool valueChecker(std::string value);
+		bool dateChecker(std::string line);
+		bool valueChecker(std::string val);
 		void fillMap();
 		void inputChecker(std::string line);
 
@@ -30,6 +33,8 @@ class BitcoinExchange
 	private:
 
 	 	std::map<std::string, float> _map;
+		std::string _value;
+		std::string _date;
 
 };
 

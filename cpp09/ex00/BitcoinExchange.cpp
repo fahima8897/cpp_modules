@@ -4,7 +4,7 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-BitcoinExchange::BitcoinExchange()
+BitcoinExchange::BitcoinExchange() : _value("Default"), _date("Default")
 {
 	// std::cout << "Default constructor BitcoinExchange called\n";
 }
@@ -48,7 +48,7 @@ BitcoinExchange &BitcoinExchange::operator=(BitcoinExchange const &rhs)
 ** --------------------------------- METHODS ----------------------------------
 */
 
-bool BitcoinExchange::dateChecker(std::string date)
+bool BitcoinExchange::dateChecker(std::string line)
 {
 	size_t pos;
 	std::string rest;
@@ -56,45 +56,64 @@ bool BitcoinExchange::dateChecker(std::string date)
 	std::string month;
 	std::string day;
 
-	pos = date.find("-");
-	year = date.substr(0, pos);
-	rest = date.substr(pos + 1);
+	pos = line.find("-");
+	year = line.substr(0, pos);
+	rest = line.substr(pos + 1);
 	pos = rest.find("-");
 	month = rest.substr(0, pos);
-	// day = rest.substr(pos + 1, 2);
+	day = rest.substr(pos + 1, 2);
+	this->_date = year + "-" + month + "-" + day;
 	// std::cout << year << std::endl;
 	// std::cout << month << std::endl;
 	// std::cout << day << std::endl;
 
 	if (year.size() > 4)
 		return false;
-	if (atoi(month.c_str()) < 1 || atoi(month.c_str()) > 12)
+	else if (atoi(month.c_str()) < 1 || atoi(month.c_str()) > 12)
 		return false;
-	if (atoi(month.c_str()) == 2)
+	else if (atoi(month.c_str()) == 2)
+	{
 		if (atoi(day.c_str()) < 1 || atoi(day.c_str()) > 28)
 			return false;
-	if (atoi(month.c_str()) == 1 || atoi(month.c_str()) == 0 ||atoi(month.c_str()) == 5 ||atoi(month.c_str()) == 7 || atoi(month.c_str()) == 8 || atoi(month.c_str()) == 10 || atoi(month.c_str()) == 12)
+	}
+	else if (atoi(month.c_str()) == 1 || atoi(month.c_str()) == 0 ||atoi(month.c_str()) == 5 ||atoi(month.c_str()) == 7 || atoi(month.c_str()) == 8 || atoi(month.c_str()) == 10 || atoi(month.c_str()) == 12)
+	{	
 		if (atoi(day.c_str()) < 1 || atoi(day.c_str()) > 31)
 			return false;
-	if (atoi(month.c_str()) == 4 || atoi(month.c_str()) == 6 ||atoi(month.c_str()) == 9 ||atoi(month.c_str()) == 11)
+	}
+	else if (atoi(month.c_str()) == 4 || atoi(month.c_str()) == 6 ||atoi(month.c_str()) == 9 ||atoi(month.c_str()) == 11)
+	{
 		if (atoi(day.c_str()) < 1 || atoi(day.c_str()) > 30)
 			return false;
+	}
 	return true;
 }
 
-bool BitcoinExchange::valueChecker(std::string value)
+bool BitcoinExchange::valueChecker(std::string val)
 {
 	size_t pos;
-	std::string nb;
+	// std::string this->_value;
 
-	if (!value.find("|"))
+	if (!val.find("|"))
 		return false;
-	pos = value.find("|");
-	nb = value.substr(pos + 1);
-	if (atoi(nb.c_str()) < 0)
-		std::cout << "Error: not a positive number." << std::endl;
-	if (atoi(nb.c_str()) < 1000)
+	pos = val.find("|");
+	this->_value = val.substr(pos + 2);
+	// std::cout << "nd is : " << this->_value << std::endl;
+	if (this->_value.size() > 10 || (this->_value.size() == 10 && this->_value.compare(STR_INT_MAX) > 0)) 
+	{
 		std::cout << "Error: too large a number." << std::endl;
+		return (false);
+	}
+	else if (atoi(this->_value.c_str()) < 0)
+	{
+		std::cout << "Error: not a positive number." << std::endl;
+		return false;
+	}
+	else if (atoi(this->_value.c_str()) > 1000)
+	{
+		std::cout << "Error: too large a number." << std::endl;
+		return false;
+	}
 	return true;
 }
 
@@ -134,11 +153,42 @@ void BitcoinExchange::fillMap()
 
 void BitcoinExchange::inputChecker(std::string line)
 {
+
+	float res;
+
+	res = 0;
 	if (dateChecker(line) == false)
 		std::cout << "Error: bad input => " << line << std::endl;
-	if (valueChecker(line) == false)
-		std::cout << "Error: bad input => " << line << std::endl;
+	else if (valueChecker(line) == false)
+		// std::cout << "Error: bad input => " << line << std::endl;
+		return ;
+	else
+	{
+		std::string key = this->_date;
+		float rate = this->_map[key];
+		if (this->_map[key])
+		{
+			res = rate * atof(this->_value.c_str());
+			std:: cout << this->_date << " => " << this->_value << " = " << res << std::endl;
+		}
+		else if (!this->_map[key])
+		{
+			std::map<std::string, float>::iterator it2;
+			it2 = this->_map.lower_bound(this->_date);
+			if (it2 == this->_map.end())
+				std::cout << "Error: no data before 2022\n";
+			else if (it2 == this->_map.begin())
+				std::cout << "Error: no data before 2009\n";
+			else
+			{
+				--it2;
+				res = it2->second * atof(this->_value.c_str());
+				std:: cout << this->_date << " => " << this->_value << " = " << res << std::endl;
+			}
+		}
+	}
 }
+
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
