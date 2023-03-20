@@ -6,7 +6,6 @@
 
 BitcoinExchange::BitcoinExchange() : _value("Default"), _date("Default")
 {
-	// std::cout << "Default constructor BitcoinExchange called\n";
 }
 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &src)
@@ -21,7 +20,6 @@ BitcoinExchange::BitcoinExchange(const BitcoinExchange &src)
 
 BitcoinExchange::~BitcoinExchange()
 {
-	// std::cout << "Destructor BitcoinExchange called\n";
 }
 
 
@@ -63,9 +61,6 @@ bool BitcoinExchange::dateChecker(std::string line)
 	month = rest.substr(0, pos);
 	day = rest.substr(pos + 1, 2);
 	this->_date = year + "-" + month + "-" + day;
-	// std::cout << year << std::endl;
-	// std::cout << month << std::endl;
-	// std::cout << day << std::endl;
 
 	if (year.size() > 4)
 		return false;
@@ -92,13 +87,11 @@ bool BitcoinExchange::dateChecker(std::string line)
 bool BitcoinExchange::valueChecker(std::string val)
 {
 	size_t pos;
-	// std::string this->_value;
 
 	if (!val.find("|"))
 		return false;
 	pos = val.find("|");
 	this->_value = val.substr(pos + 2);
-	// std::cout << "nd is : " << this->_value << std::endl;
 	if (this->_value.size() > 10 || (this->_value.size() == 10 && this->_value.compare(STR_INT_MAX) > 0)) 
 	{
 		std::cout << "Error: too large a number." << std::endl;
@@ -138,8 +131,6 @@ void BitcoinExchange::fillMap()
 				value = line.substr(found + 1);
 				this->_map.insert(std::pair<std::string, float>(date, atof(value.c_str())));
 				std::map<std::string, float>::iterator it;
-				// for (it = this->_map.begin(); it != this->_map.end(); it++)
-					// 	std::cout << it->first << " - " << it->second << std::endl;
 			}
 		}
 		
@@ -158,9 +149,8 @@ void BitcoinExchange::inputChecker(std::string line)
 
 	res = 0;
 	if (dateChecker(line) == false)
-		std::cout << "Error: bad input => " << line << std::endl;
+		std::cout << "Error: bad input => " << this->_date << std::endl;
 	else if (valueChecker(line) == false)
-		// std::cout << "Error: bad input => " << line << std::endl;
 		return ;
 	else
 	{
@@ -171,14 +161,14 @@ void BitcoinExchange::inputChecker(std::string line)
 			res = rate * atof(this->_value.c_str());
 			std:: cout << this->_date << " => " << this->_value << " = " << res << std::endl;
 		}
-		else if (!this->_map[key])
+		else
 		{
 			std::map<std::string, float>::iterator it2;
 			it2 = this->_map.lower_bound(this->_date);
-			if (it2 == this->_map.end())
-				std::cout << "Error: no data before 2022\n";
-			else if (it2 == this->_map.begin())
+			if (it2 == this->_map.begin())
 				std::cout << "Error: no data before 2009\n";
+			else if (it2 == this->_map.end())
+				std::cout << "Error: no data before 2022\n";
 			else
 			{
 				--it2;
