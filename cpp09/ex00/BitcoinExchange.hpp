@@ -25,6 +25,7 @@ class BitcoinExchange
 
 		bool dateChecker(std::string line);
 		bool valueChecker(std::string val);
+		bool valueCheckerCsv(std::string str);
 		void fillMap();
 		void inputChecker(std::string line);
 

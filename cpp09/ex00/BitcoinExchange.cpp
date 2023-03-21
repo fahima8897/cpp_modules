@@ -49,6 +49,8 @@ BitcoinExchange &BitcoinExchange::operator=(BitcoinExchange const &rhs)
 bool BitcoinExchange::dateChecker(std::string line)
 {
 	size_t pos;
+	size_t pos2;
+
 	std::string rest;
 	std::string year;
 	std::string month;
@@ -62,7 +64,11 @@ bool BitcoinExchange::dateChecker(std::string line)
 	day = rest.substr(pos + 1, 2);
 	this->_date = year + "-" + month + "-" + day;
 
-	if (year.size() > 4)
+	pos2 = this->_date.find_first_not_of("0123456789-", 0);
+
+	if (pos2 != std::string::npos)
+		return false;
+	else if (year.size() > 4)
 		return false;
 	else if (atoi(month.c_str()) < 1 || atoi(month.c_str()) > 12)
 		return false;
@@ -87,12 +93,19 @@ bool BitcoinExchange::dateChecker(std::string line)
 bool BitcoinExchange::valueChecker(std::string val)
 {
 	size_t pos;
+	size_t pos2;
 
 	if (!val.find("|"))
 		return false;
 	pos = val.find("|");
 	this->_value = val.substr(pos + 2);
-	if (this->_value.size() > 10 || (this->_value.size() == 10 && this->_value.compare(STR_INT_MAX) > 0)) 
+	pos2 = this->_value.find_first_not_of("0123456789.-", 0);
+	if (pos2 != std::string::npos)
+	{
+		std::cout << "Error: not a number" << std::endl;
+		return false;
+	}
+	else if (this->_value.size() > 10 || (this->_value.size() == 10 && this->_value.compare(STR_INT_MAX) > 0)) 
 	{
 		std::cout << "Error: too large a number." << std::endl;
 		return (false);
@@ -110,6 +123,35 @@ bool BitcoinExchange::valueChecker(std::string val)
 	return true;
 }
 
+bool BitcoinExchange::valueCheckerCsv(std::string str)
+{
+	size_t pos;
+	size_t pos2;
+
+	if (!str.find(","))
+		return false;
+	pos = str.find(",");
+	this->_value = str.substr(pos + 1);
+	pos2 = this->_value.find_first_not_of("0123456789.", 0);
+	if (pos2 != std::string::npos)
+	{
+		std::cout << "Error: not a number" << std::endl;
+		return false;
+	}
+	else if (this->_value.size() > 10 || (this->_value.size() == 10 && this->_value.compare(STR_INT_MAX) > 0)) 
+	{
+		std::cout << "Error: too large a number." << std::endl;
+		return (false);
+	}
+	else if (atoi(this->_value.c_str()) < 0)
+	{
+		std::cout << "Error: not a positive number." << std::endl;
+		return false;
+	}
+	return true;
+}
+
+
 void BitcoinExchange::fillMap()
 {
 	std::string line;
@@ -126,11 +168,18 @@ void BitcoinExchange::fillMap()
 				continue ;
 			else
 			{
+				if (dateChecker(line) == false)
+					continue ;
+				if (valueCheckerCsv(line) == false)
+					continue ;
 				found = line.find(",");
 				date = line.substr(0, found);
 				value = line.substr(found + 1);
+
 				this->_map.insert(std::pair<std::string, float>(date, atof(value.c_str())));
-				std::map<std::string, float>::iterator it;
+				// std::map<std::string, float>::iterator it;
+				// for (it = this->_map.begin(); it != this->_map.end(); it++)
+				// 	std::cout << it->first << ", " << it->second << std::endl;
 			}
 		}
 		
@@ -138,26 +187,24 @@ void BitcoinExchange::fillMap()
 	else
 		std::cout << "Error: could not open csv data file\n";
 	data.close();  
-
 }
 
 
 void BitcoinExchange::inputChecker(std::string line)
 {
-
 	float res;
 
 	res = 0;
 	if (dateChecker(line) == false)
-		std::cout << "Error: bad input => " << this->_date << std::endl;
+		std::cout << "Error: bad input => " << line << std::endl;
 	else if (valueChecker(line) == false)
 		return ;
 	else
 	{
 		std::string key = this->_date;
-		float rate = this->_map[key];
-		if (this->_map[key])
+		if (this->_map.count(key))
 		{
+			float rate = this->_map[key];
 			res = rate * atof(this->_value.c_str());
 			std:: cout << this->_date << " => " << this->_value << " = " << res << std::endl;
 		}
@@ -166,14 +213,14 @@ void BitcoinExchange::inputChecker(std::string line)
 			std::map<std::string, float>::iterator it2;
 			it2 = this->_map.lower_bound(this->_date);
 			if (it2 == this->_map.begin())
-				std::cout << "Error: no data before 2009\n";
+				std::cout << "Error: no data that early" << std::endl;
 			else if (it2 == this->_map.end())
-				std::cout << "Error: no data before 2022\n";
+				std::cout << "Error: no data that late" << std::endl;
 			else
 			{
 				--it2;
 				res = it2->second * atof(this->_value.c_str());
-				std:: cout << this->_date << " => " << this->_value << " = " << res << std::endl;
+				std::cout << this->_date << " => " << this->_value << " = " << res << std::endl;
 			}
 		}
 	}
