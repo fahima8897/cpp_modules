@@ -66,16 +66,20 @@ void RPN::calcul(std::string str)
 		if (str.at(i) == 32)
 			i++;
 		if (!operateur(str.at(i)))
-		{
+		// {
 			this->_pile.push(str.at(i) - '0');
-			std::cout << "nb push : " << this->_pile.top() << std::endl;
-		}
+		// 	std::cout << "nb push : " << this->_pile.top() << std::endl;
+		// }
 		else 
 		{
-			val1 = this->_pile.top();
-			this->_pile.pop();
-			val2 = this->_pile.top();
-			this->_pile.pop();
+			if(!this->_pile.empty())
+				val1 = this->_pile.top();
+			if(!this->_pile.empty())
+				this->_pile.pop();
+			if(!this->_pile.empty())
+				val2 = this->_pile.top();
+			if(!this->_pile.empty())
+				this->_pile.pop();
 			if(str.at(i) == '+')
 					res = val2 + val1;
 			else if (str.at(i) == '-')
@@ -83,7 +87,14 @@ void RPN::calcul(std::string str)
 			else if(str.at(i) == '*')
 					res = val2 * val1;
 			else
-					res = val2 / val1;
+			{
+				if (val1 == 0)
+				{
+					std::cout << "Error : operation impossible" << std::endl;
+					return ;
+				}
+				res = val2 / val1;
+			}
 			this->_pile.push(res);
 		}
 	}

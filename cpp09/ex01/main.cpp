@@ -6,14 +6,11 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 13:58:39 by fboumell          #+#    #+#             */
-/*   Updated: 2023/03/21 16:10:03 by fboumell         ###   ########.fr       */
+/*   Updated: 2023/03/21 16:38:17 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
-
-// pour utiliser "pop" verifier que la pile n'est pas vide : if (!_pile.empty())
-// idem pour "top"
 
 int main(int ac, char **av)
 {
@@ -38,7 +35,8 @@ int main(int ac, char **av)
             return 0;
         }
         stack.calcul(str);
-        std::cout << stack.getStack().top() << std::endl;
+        if(!stack.getStack().empty())
+            std::cout << stack.getStack().top() << std::endl;
     }
     return 0;
 }
