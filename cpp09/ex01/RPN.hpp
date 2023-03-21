@@ -12,9 +12,14 @@ class RPN
 
 		RPN();
 		RPN(RPN const &src);
+		RPN &operator=(RPN const &rhs);
 		~RPN();
 
-		RPN &operator=(RPN const &rhs);
+		std::stack<int> const &getStack() const;
+
+		bool operateur(const char c);
+		void calcul(std::string str);
+		bool checkvalidity(std::string str);
 
 	private:
 		std::stack<int> _pile;

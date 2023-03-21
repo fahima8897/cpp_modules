@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 13:58:39 by fboumell          #+#    #+#             */
-/*   Updated: 2023/03/06 17:59:16 by fboumell         ###   ########.fr       */
+/*   Updated: 2023/03/21 16:10:03 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,15 @@ int main(int ac, char **av)
                 std::cout << "Error\n";
                 return 0;
             }
-            
         }
-        
+        RPN stack = RPN();
+        if (!stack.checkvalidity(str))
+        {
+            std::cout << "Error : incorrect operators number" << std::endl;
+            return 0;
+        }
+        stack.calcul(str);
+        std::cout << stack.getStack().top() << std::endl;
     }
     return 0;
 }
