@@ -63,13 +63,10 @@ void RPN::calcul(std::string str)
 
 	for (size_t i = 0; i < str.size(); i++)
 	{
-		if (str.at(i) == 32)
-			i++;
-		if (!operateur(str.at(i)))
-		// {
+		if (str.at(i) == ' ')
+			continue ;
+		else if (!operateur(str.at(i)))
 			this->_pile.push(str.at(i) - '0');
-		// 	std::cout << "nb push : " << this->_pile.top() << std::endl;
-		// }
 		else 
 		{
 			if(!this->_pile.empty())
@@ -114,7 +111,7 @@ bool	RPN::checkvalidity(std::string str)
 			numbers++;
 		++i;
 	}
-	if (oper == 0 || oper >= numbers)
+	if (oper == 0 || oper != numbers - 1)
 		return false ;
 	return true;
 }
