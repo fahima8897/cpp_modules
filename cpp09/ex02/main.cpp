@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 15:59:02 by fboumell          #+#    #+#             */
-/*   Updated: 2023/03/22 16:52:32 by fboumell         ###   ########.fr       */
+/*   Updated: 2023/03/22 17:57:41 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(int ac, char **av)
 {
-    if (ac <= 2)
+    if (ac < 2)
         std::cout << "Error" << std::endl;
     else
     {
@@ -29,7 +29,7 @@ int main(int ac, char **av)
                 if (!isdigit(str[i]) || str.size() > 10 || (str.size() == 10 && str.compare(STR_INT_MAX) > 0))
                 {
                     std::cout << "Error" << std::endl;
-                    return 0;
+                    return 1;
                 }
             }
             value.getVector().push_back(atoi(str.c_str()));

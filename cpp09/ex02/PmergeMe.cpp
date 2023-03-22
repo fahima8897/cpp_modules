@@ -214,9 +214,9 @@ void PmergeMe::merge_sort()
 		std::cout << std::endl;
 	}
 	double time = (double)vec_time / CLOCKS_PER_SEC;
-	std::cout << "Time to process a range of " << this->_vec.size() << " elements with std::vector : " << std::fixed << std::setprecision(6) << time << " s" << std::endl;
+	std::cout << "Time to process a range of " << this->_vec.size() << " elements with std::vector : " << std::fixed << std::setprecision(6) << time << "s" << std::endl;
 	time = (double)deq_time / CLOCKS_PER_SEC;
-	std::cout << "Time to process a range of " << this->_deq.size() << " elements with std::deque : " << std::fixed << std::setprecision(6) << time << " s" << std::endl;
+	std::cout << "Time to process a range of " << this->_deq.size() << " elements with std::deque  : " << std::fixed << std::setprecision(6) << time << "s" << std::endl;
 }
 
 /*
