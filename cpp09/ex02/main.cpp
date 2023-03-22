@@ -6,7 +6,7 @@
 /*   By: fboumell <fboumell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 15:59:02 by fboumell          #+#    #+#             */
-/*   Updated: 2023/03/22 14:40:00 by fboumell         ###   ########.fr       */
+/*   Updated: 2023/03/22 16:52:32 by fboumell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,19 @@ int main(int ac, char **av)
         }
         std::cout << "Before: ";
         std::vector<int>::iterator it = value.getVector().begin();
-        for (; it != value.getVector().end(); it++)
+        if (value.getVector().size() > 5)
         {
-            if (it == (value.getVector().end() - 1))
-                std::cout << *it << std::endl;
-            else
+            for (; it < value.getVector().begin() + 4 ; it++)
+            {
                 std::cout << *it << " ";
+            }
+            std::cout << "[...]" << std::endl;
+        }
+        else 
+        {
+            for (; it != value.getVector().end(); it++)
+                std::cout << *it << " ";
+            std::cout << std::endl;
         }
         value.merge_sort();
     }
