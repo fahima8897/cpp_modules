@@ -32,6 +32,8 @@ BitcoinExchange &BitcoinExchange::operator=(BitcoinExchange const &rhs)
 	if ( this == &rhs )
 		return *this;
 	this->_map = rhs._map;
+	this->_value = rhs._value;
+	this->_date = rhs._date;
 	return *this;
 }
 
