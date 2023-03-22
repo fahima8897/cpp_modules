@@ -171,6 +171,32 @@ void PmergeMe::merge_sort()
 	sort_deq(this->_deq, 0, this->_deq.size() - 1);
 	deq_time = clock() - deq_time;
 
+	for (size_t i = 0; i < this->_vec.size(); ++i)
+	{
+		if (this->_vec[i] != this->_deq[i])
+		{
+			std::cout << "Error: vec and deq are not identical." << std::endl;
+			return ;
+		}
+	}
+
+	for (size_t i = 0; i < this->_vec.size() - 1; ++i)
+	{
+		if (this->_vec[i] > this->_vec[i + 1])
+		{
+			std::cout << "Error: vec is not sorted." << std::endl;
+			return ;
+		}
+	}
+	for (size_t i = 0; i <this->_deq.size() - 1; ++i)
+	{
+		if (this->_deq[i] >this->_deq[i + 1])
+		{
+			std::cout << "Error: dq is not sorted." << std::endl;
+			return ;
+		}
+	}
+
 	std::cout << "After: ";
 	std::vector<int>::iterator it = this->_vec.begin();
 	if (this->_vec.size() > 5)
