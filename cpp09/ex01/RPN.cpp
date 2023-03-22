@@ -31,6 +31,7 @@ RPN &RPN::operator=(RPN const &rhs)
 {
 	if (this == &rhs)
 		return *this;
+	this->_pile = rhs._pile;
 	return *this;
 }
 
