@@ -112,12 +112,12 @@ bool BitcoinExchange::valueChecker(std::string val)
 		std::cout << "Error: too large a number." << std::endl;
 		return (false);
 	}
-	else if (atoi(this->_value.c_str()) < 0)
+	else if (atof(this->_value.c_str()) < 0)
 	{
 		std::cout << "Error: not a positive number." << std::endl;
 		return false;
 	}
-	else if (atoi(this->_value.c_str()) > 1000)
+	else if (atof(this->_value.c_str()) > 1000)
 	{
 		std::cout << "Error: too large a number." << std::endl;
 		return false;
