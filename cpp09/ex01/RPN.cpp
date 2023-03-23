@@ -56,7 +56,7 @@ bool RPN::operateur(const char c)
 }
 
 
-void RPN::calcul(std::string str)
+bool RPN::calcul(std::string str)
 {
 	int val1;
 	int val2;
@@ -70,32 +70,41 @@ void RPN::calcul(std::string str)
 			this->_pile.push(str.at(i) - '0');
 		else 
 		{
-			if(!this->_pile.empty())
-				val1 = this->_pile.top();
-			if(!this->_pile.empty())
-				this->_pile.pop();
-			if(!this->_pile.empty())
-				val2 = this->_pile.top();
-			if(!this->_pile.empty())
-				this->_pile.pop();
-			if(str.at(i) == '+')
+			if (this->_pile.size() >= 2)
+			{
+				if(!this->_pile.empty())
+					val1 = this->_pile.top();
+				if(!this->_pile.empty())
+					this->_pile.pop();
+				if(!this->_pile.empty())
+					val2 = this->_pile.top();
+				if(!this->_pile.empty())
+					this->_pile.pop();
+				if(str.at(i) == '+')
 					res = val2 + val1;
-			else if (str.at(i) == '-')
+				else if (str.at(i) == '-')
 					res = val2 - val1;
-			else if(str.at(i) == '*')
+				else if(str.at(i) == '*')
 					res = val2 * val1;
+				else
+				{
+					if (val1 == 0)
+					{
+						std::cout << "Error : operation impossible" << std::endl;
+						return false;
+					}
+					res = val2 / val1;
+				}
+				this->_pile.push(res);
+			}
 			else
 			{
-				if (val1 == 0)
-				{
-					std::cout << "Error : operation impossible" << std::endl;
-					return ;
-				}
-				res = val2 / val1;
-			}
-			this->_pile.push(res);
+				std::cout << "Error : operation impossible" << std::endl;
+				return false;
+        	}
 		}
 	}
+	return true;
 }
 
 bool	RPN::checkvalidity(std::string str)

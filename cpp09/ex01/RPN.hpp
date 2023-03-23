@@ -18,7 +18,7 @@ class RPN
 		std::stack<int> const &getStack() const;
 
 		bool operateur(const char c);
-		void calcul(std::string str);
+		bool calcul(std::string str);
 		bool checkvalidity(std::string str);
 
 	private:
